@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "my-blog",
+    "section": "",
+    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 27, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 24, 2026\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Python\n\n\n\npython\n\nbeginner\n\n\n\nLetting you soak your feet into Python and some jargons you might hear\n\n\n\n\n\nApr 8, 2026\n\n\nSyeda Fatema Azmi\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/python-intro/index.html",
+    "href": "posts/python-intro/index.html",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Before learning to do anything with Python, we need to understand what even is it. Python is a programming language — a way to give instructions to your computer in something closer to plain English. Unlike languages like C++ or Java, Python was designed to be readable and simple to write. That’s why it became the go-to language for data science, machine learning, and AI. Python has allowed programmers to focus more on where they are going with the code rather than focusing on writing the code itself."
+  },
+  {
+    "objectID": "posts/python-intro/index.html#what-is-python",
+    "href": "posts/python-intro/index.html#what-is-python",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Before learning to do anything with Python, we need to understand what even is it. Python is a programming language — a way to give instructions to your computer in something closer to plain English. Unlike languages like C++ or Java, Python was designed to be readable and simple to write. That’s why it became the go-to language for data science, machine learning, and AI. Python has allowed programmers to focus more on where they are going with the code rather than focusing on writing the code itself."
+  },
+  {
+    "objectID": "posts/python-intro/index.html#why-is-python-used-extensively",
+    "href": "posts/python-intro/index.html#why-is-python-used-extensively",
+    "title": "Introduction to Python",
+    "section": "Why is Python used extensively?",
+    "text": "Why is Python used extensively?\n\nPython has a simple syntax allowing you to read and write the code almost like English sentences.\nPython is an interpreter, so code can be executed as soon as its written.\nIt is free and open source. So one needs no liscences or fees to be able to code.\nIt has various pre-built toolkits including pandas (data handling), numpy (math), matplotlib (charts), and scikit-learn (machine learning), so that you do not have to build everything from scratch."
+  },
+  {
+    "objectID": "posts/python-intro/index.html#some-useful-jargon",
+    "href": "posts/python-intro/index.html#some-useful-jargon",
+    "title": "Introduction to Python",
+    "section": "Some useful jargon",
+    "text": "Some useful jargon\nBefore going further, here are terms you’ll keep bumping into: - Library / Package — A collection of pre-written code you can import and use. Like downloading an app instead of building one. - Syntax — The grammar rules of a programming language. Get them wrong and the code breaks. This is similar to a sentence structure. If you do not follow a sentence structure, it does not mean anything! - Output / Console — Where results of your code are printed/displayed. - Variable — A named box that stores a value. (We will dive deeper into this in the next page.) - Function — A reusable block of code that does a specific task. You call it by name. (This will be discussed further too.)"
+  },
+  {
+    "objectID": "posts/python-intro/index.html#jupyter-notebook-vs-python-script",
+    "href": "posts/python-intro/index.html#jupyter-notebook-vs-python-script",
+    "title": "Introduction to Python",
+    "section": "Jupyter Notebook vs Python Script",
+    "text": "Jupyter Notebook vs Python Script"
+  }
+]
