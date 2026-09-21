@@ -2,64 +2,78 @@
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "title": "Welcome To Syeda’s Blog",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "This is the first post in my blog. Welcome!\nThis blog is a space to share my experiences, thoughts, and learnings in the field of programming, data science, and technology, as I continue my journey. I aim to create a community where we can learn from each other and grow together."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Syeda's Journey",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "Introduction to Python\n\n\n\npython-basics\n\n\n\nLetting you soak your feet into Python and some jargons you might hear\n\n\n\n\n\nSep 20, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To Syeda’s Blog\n\n\n\nwelcome\n\n\n\n\n\n\n\n\n\nAug 24, 2026\n\n\nSyeda Fatema Azmi\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this blog"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "my-blog",
-    "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 27, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 24, 2026\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Python\n\n\n\npython\n\nbeginner\n\n\n\nLetting you soak your feet into Python and some jargons you might hear\n\n\n\n\n\nApr 8, 2026\n\n\nSyeda Fatema Azmi\n\n\n\n\n\nNo matching items"
+    "text": "Welcome!\nHere, I share my journey of learning Python and the world of machine learning. I will also share practices, tips, and insights on various topics related to programming, data science, and technology which I wished I had known when I was starting out. I hope that my experiences will be helpful for beginners and enthusiasts alike."
   },
   {
     "objectID": "posts/python-intro/index.html",
     "href": "posts/python-intro/index.html",
     "title": "Introduction to Python",
     "section": "",
-    "text": "Before learning to do anything with Python, we need to understand what even is it. Python is a programming language — a way to give instructions to your computer in something closer to plain English. Unlike languages like C++ or Java, Python was designed to be readable and simple to write. That’s why it became the go-to language for data science, machine learning, and AI. Python has allowed programmers to focus more on where they are going with the code rather than focusing on writing the code itself."
+    "text": "If you are here, you have probably heard about Python all around you but do not know where to start your journey. This is the right place. Begin with learning what it is, before learning how to do anything with it.\nPython is a programming language — a way to give instructions to your computer in something closer to plain English. Unlike languages like C++ or Java, Python was designed to be readable and simple to write. That’s why it became the go-to language for so many fields you are probably aware about including data science and AI. Python has allowed programmers to focus more on where they are going with the code rather than focusing on writing the code itself."
   },
   {
     "objectID": "posts/python-intro/index.html#what-is-python",
     "href": "posts/python-intro/index.html#what-is-python",
     "title": "Introduction to Python",
     "section": "",
-    "text": "Before learning to do anything with Python, we need to understand what even is it. Python is a programming language — a way to give instructions to your computer in something closer to plain English. Unlike languages like C++ or Java, Python was designed to be readable and simple to write. That’s why it became the go-to language for data science, machine learning, and AI. Python has allowed programmers to focus more on where they are going with the code rather than focusing on writing the code itself."
+    "text": "If you are here, you have probably heard about Python all around you but do not know where to start your journey. This is the right place. Begin with learning what it is, before learning how to do anything with it.\nPython is a programming language — a way to give instructions to your computer in something closer to plain English. Unlike languages like C++ or Java, Python was designed to be readable and simple to write. That’s why it became the go-to language for so many fields you are probably aware about including data science and AI. Python has allowed programmers to focus more on where they are going with the code rather than focusing on writing the code itself."
   },
   {
     "objectID": "posts/python-intro/index.html#why-is-python-used-extensively",
     "href": "posts/python-intro/index.html#why-is-python-used-extensively",
     "title": "Introduction to Python",
     "section": "Why is Python used extensively?",
-    "text": "Why is Python used extensively?\n\nPython has a simple syntax allowing you to read and write the code almost like English sentences.\nPython is an interpreter, so code can be executed as soon as its written.\nIt is free and open source. So one needs no liscences or fees to be able to code.\nIt has various pre-built toolkits including pandas (data handling), numpy (math), matplotlib (charts), and scikit-learn (machine learning), so that you do not have to build everything from scratch."
+    "text": "Why is Python used extensively?\nThere are various programming languages - some which are used in nichely. However, Python is used extensively, especially as a default in data science and machine learning. Why so?\n\nPython has a simple syntax allowing you to read and write the code almost like English sentences.\nPython is an interpreter, so code can be executed as soon as its written.\nIt is free and open source. So you need no liscences or fees to be able to code.\nIt has various pre-built toolkits, so that you do not have to build everything from scratch.\nIt is versatile, meaning you can use it not only for your dataset exploration and graph building but also for building models as well as a user interface."
   },
   {
-    "objectID": "posts/python-intro/index.html#some-useful-jargon",
-    "href": "posts/python-intro/index.html#some-useful-jargon",
+    "objectID": "posts/python-intro/index.html#libraries",
+    "href": "posts/python-intro/index.html#libraries",
     "title": "Introduction to Python",
-    "section": "Some useful jargon",
-    "text": "Some useful jargon\nBefore going further, here are terms you’ll keep bumping into: - Library / Package — A collection of pre-written code you can import and use. Like downloading an app instead of building one. - Syntax — The grammar rules of a programming language. Get them wrong and the code breaks. This is similar to a sentence structure. If you do not follow a sentence structure, it does not mean anything! - Output / Console — Where results of your code are printed/displayed. - Variable — A named box that stores a value. (We will dive deeper into this in the next page.) - Function — A reusable block of code that does a specific task. You call it by name. (This will be discussed further too.)"
+    "section": "Libraries",
+    "text": "Libraries\nThe pre-built toolkits I mentioned earlier? These are the libraries. Libraries are the most important aspect of Python, that makes it easy to use for variety of tasks.\nA library (also commonly called a package) is a collection of pre-written code that someone else built and very gratefully shared. Instead of writing hundreds of lines to load a spreadsheet, calculate statistics, or draw a chart — you import a library and call a function that does it in one line.\nThink of it like the spices zou use to cook. You can gather everything and make spices from scratch at home but nobody does it because ‘packaged’ ones are convenient to use.\nHere are some libraries you will hear very often:\n\nnumpy: core for scientific computing and handling arrays\npandas: expert at handling data structures like tables\nmatplotlib: handles your visualizations\npytorch: your support system for everything neural network\n\nside note: There are in-built and external libraries too. All the ones mentioned above are popular external ones. Check out the python documentation for a in-depth search at https://docs.python.org/3/library/index.html or simply search about a library once you hear about it somewhere at https://pypi.org/"
+  },
+  {
+    "objectID": "posts/python-intro/index.html#what-is-an-ide",
+    "href": "posts/python-intro/index.html#what-is-an-ide",
+    "title": "Introduction to Python",
+    "section": "What is an IDE?",
+    "text": "What is an IDE?\nThis is another term you will hear often once you enter the Python world.\nIDE stands for Integrated Development Environment. It’s simply the app you use to write and run your code — think of it like Microsoft Word, but for programming. You can write your code there, edit, find errors, fix errors and run everything at the same place. It highlights your code, catches errors, and lets you run it all in one place. There are various IDEs available but we will be using VS Code throughout this blog. It’s the most widely used editor, especially in the data science community right now and is also a good start for beginners as it allows you to shift to other languages too."
   },
   {
     "objectID": "posts/python-intro/index.html#jupyter-notebook-vs-python-script",
     "href": "posts/python-intro/index.html#jupyter-notebook-vs-python-script",
     "title": "Introduction to Python",
     "section": "Jupyter Notebook vs Python Script",
-    "text": "Jupyter Notebook vs Python Script"
+    "text": "Jupyter Notebook vs Python Script\nOnce you have an IDE, you’ll write Python in one of two formats. This distinction trips up a lot of beginners, so it’s worth clearing up early.\n\nPython Script — .py\nA plain text file (ending with .py) containing Python code. When you run it, the entire file executes top to bottom. This is what you use for finished work — automation scripts, production code, tools you want to hand to someone else.\n\n\nJupyter Notebook — .ipynb\nA notebook where code lives in individual cells which you can run one at a time. Each cell shows its output directly below it. You can mix code cells with text cells — writing explanations, showing charts, and running code all in the same document. This is actually what is being used right now to write this blog.\nYou can think of pyscript as a finished cookbook that you wrote for distribution whereas the notebook is your personal messy notebook with your experimentation and outcome breakdown."
+  },
+  {
+    "objectID": "posts/python-intro/index.html#environment-dependency-management",
+    "href": "posts/python-intro/index.html#environment-dependency-management",
+    "title": "Introduction to Python",
+    "section": "Environment & Dependency Management",
+    "text": "Environment & Dependency Management\nHere’s where things get slightly confusing for beginners — and that’s okay, because even experienced developers find this part messy. When you install Python, you also need to manage:\n\nWhich version of Python you’re using\nWhich libraries you have installed\nKeeping different projects separate so their libraries don’t conflict with each other\n\nThis is called environment management, and several tools exist to handle it. This is an essential part because it helps avoid conflicts — for example, one project might require PyTorch 2.x while another needs a different version.\nLet’s walk through some of them.\n\n\n\n\n\n\n\n\nTool\nFunction\nCategory\n\n\n\n\nAnaconda\nManages Python, packages, environments\nDistribution & environment management\n\n\npip\nInstall Python packages\nPackage Management\n\n\nvenv\nCreates isolated python envrionments, uv is built on this concept\nEnvironment management\n\n\nuv\nManages Python versions, environments, packages, dependencies\nWhat we will be using mostly\n\n\n\nside note: Find more: - anaconda - pip - venv - uv"
+  },
+  {
+    "objectID": "posts/python-intro/index.html#up-next",
+    "href": "posts/python-intro/index.html#up-next",
+    "title": "Introduction to Python",
+    "section": "Up Next",
+    "text": "Up Next\nWe will start with getting everything installed and set up, so you can start simple experiemnts yourself"
   }
 ]

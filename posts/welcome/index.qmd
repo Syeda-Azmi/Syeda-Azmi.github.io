@@ -1,12 +1,11 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
+title: "Welcome To Syeda's Blog"
+author: "Syeda Fatema Azmi"
 date: "2026-08-24"
-categories: [news]
+categories: [welcome]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+This is the first post in my blog. Welcome!
 
-![](thumbnail.jpg)
+This blog is a space to share my experiences, thoughts, and learnings in the field of programming, data science, and technology, as I continue my journey. I aim to create a community where we can learn from each other and grow together.
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.

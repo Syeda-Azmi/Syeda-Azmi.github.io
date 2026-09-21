@@ -4,7 +4,7 @@ project:
 website:
   description: "Learn Python with me"
   site-url: https://your-website-url.example.com # you must change this appropriately for RSS feeds to work properly
-  title: "Syeda's Blog"
+  title: "Syeda's Journey"
   navbar:
     right:
       - about.qmd
@@ -15,8 +15,9 @@ website:
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      #- cosmo
+      #- brand
+      -journal
     css: styles.css
 
 

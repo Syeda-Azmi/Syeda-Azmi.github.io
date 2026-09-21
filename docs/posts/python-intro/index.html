@@ -6,11 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Syeda Fatema Azmi">
-<meta name="dcterms.date" content="2026-04-08">
+<meta name="dcterms.date" content="2026-09-20">
 <meta name="description" content="Letting you soak your feet into Python and some jargons you might hear">
 
-<title>Introduction to Python – Syeda’s Blog</title>
+<title>Introduction to Python – Syeda’s Journey</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -45,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-ece42c8223ec2bf36298a08f122c9a68.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Syeda’s Blog</span>
+    <span class="navbar-title">Syeda’s Journey</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -127,8 +126,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">python</div>
-                <div class="quarto-category">beginner</div>
+                <div class="quarto-category">python-basics</div>
               </div>
                   </div>
   </div>
@@ -136,17 +134,11 @@ ul.task-list li input[type="checkbox"] {
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Syeda Fatema Azmi </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 8, 2026</p>
+        <p class="date">September 20, 2026</p>
       </div>
     </div>
     
@@ -167,30 +159,105 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="what-is-python" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-python">What is Python?</h2>
-<p>Before learning to do anything with Python, we need to understand what even is it. Python is a programming language — a way to give instructions to your computer in something closer to plain English. Unlike languages like C++ or Java, Python was designed to be readable and simple to write. That’s why it became the go-to language for data science, machine learning, and AI. Python has allowed programmers to focus more on where they are going with the code rather than focusing on writing the code itself.</p>
+<p>If you are here, you have probably heard about Python all around you but do not know where to start your journey. This is the right place. Begin with learning what it is, before learning how to do anything with it.</p>
+<p>Python is a programming language — a way to give instructions to your computer in something closer to plain English. Unlike languages like C++ or Java, Python was designed to be readable and simple to write. That’s why it became the go-to language for so many fields you are probably aware about including data science and AI. Python has allowed programmers to focus more on where they are going with the code rather than focusing on writing the code itself.</p>
 </section>
 <section id="why-is-python-used-extensively" class="level2">
 <h2 class="anchored" data-anchor-id="why-is-python-used-extensively">Why is Python used extensively?</h2>
+<p>There are various programming languages - some which are used in nichely. However, Python is used extensively, especially as a default in data science and machine learning. Why so?</p>
 <ul>
 <li>Python has a simple syntax allowing you to read and write the code almost like English sentences.</li>
 <li>Python is an interpreter, so code can be executed as soon as its written.</li>
-<li>It is free and open source. So one needs no liscences or fees to be able to code.</li>
-<li>It has various pre-built toolkits including pandas (data handling), numpy (math), matplotlib (charts), and scikit-learn (machine learning), so that you do not have to build everything from scratch.</li>
+<li>It is free and open source. So you need no liscences or fees to be able to code.</li>
+<li>It has various pre-built toolkits, so that you do not have to build everything from scratch.</li>
+<li>It is versatile, meaning you can use it not only for your dataset exploration and graph building but also for building models as well as a user interface.</li>
 </ul>
 </section>
-<section id="some-useful-jargon" class="level2">
-<h2 class="anchored" data-anchor-id="some-useful-jargon">Some useful jargon</h2>
-<p>Before going further, here are terms you’ll keep bumping into: - Library / Package — A collection of pre-written code you can import and use. Like downloading an app instead of building one. - Syntax — The grammar rules of a programming language. Get them wrong and the code breaks. This is similar to a sentence structure. If you do not follow a sentence structure, it does not mean anything! - Output / Console — Where results of your code are printed/displayed. - Variable — A named box that stores a value. (We will dive deeper into this in the next page.) - Function — A reusable block of code that does a specific task. You call it by name. (This will be discussed further too.)</p>
+<section id="libraries" class="level2">
+<h2 class="anchored" data-anchor-id="libraries">Libraries</h2>
+<p>The pre-built toolkits I mentioned earlier? These are the libraries. Libraries are the most important aspect of Python, that makes it easy to use for variety of tasks.</p>
+<p>A library (also commonly called a package) is a collection of pre-written code that someone else built and very gratefully shared. Instead of writing hundreds of lines to load a spreadsheet, calculate statistics, or draw a chart — you import a library and call a function that does it in one line.</p>
+<p>Think of it like the spices zou use to cook. You can gather everything and make spices from scratch at home but nobody does it because ‘packaged’ ones are convenient to use.</p>
+<p>Here are some libraries you will hear very often:</p>
+<ul>
+<li>numpy: core for scientific computing and handling arrays</li>
+<li>pandas: expert at handling data structures like tables</li>
+<li>matplotlib: handles your visualizations</li>
+<li>pytorch: your support system for everything neural network</li>
+</ul>
+<p><em>side note: There are in-built and external libraries too. All the ones mentioned above are popular external ones. Check out the python documentation for a in-depth search at <a href="https://docs.python.org/3/library/index.html" class="uri">https://docs.python.org/3/library/index.html</a> or simply search about a library once you hear about it somewhere at <a href="https://pypi.org/" class="uri">https://pypi.org/</a></em></p>
 </section>
-<section id="what-is-an-ide" class="level1">
-<h1>What is an IDE?</h1>
-<p>This another term you will hear often once you enter the Python world. IDE stands for Integrated Development Environment. It’s simply the app you use to write and run your code — think of it like Microsoft Word, but for programming. It highlights your code, catches errors, and lets you run it all in one place. There are different IDEs: - VS code : Most commonly used. Used for general purpose - PyCharm : Python specific and used for powerful, large projects</p>
-<p>In my opinion, VS code is the best to use as a beginner who is not in any niche field as it is lightweight, free, has great extensions and allows you to shift to other languages if needed</p>
+<section id="what-is-an-ide" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-ide">What is an IDE?</h2>
+<p>This is another term you will hear often once you enter the Python world.</p>
+<p>IDE stands for Integrated Development Environment. It’s simply the app you use to write and run your code — think of it like Microsoft Word, but for programming. You can write your code there, edit, find errors, fix errors and run everything at the same place. It highlights your code, catches errors, and lets you run it all in one place. There are various IDEs available but we will be using VS Code throughout this blog. It’s the most widely used editor, especially in the data science community right now and is also a good start for beginners as it allows you to shift to other languages too.</p>
+</section>
 <section id="jupyter-notebook-vs-python-script" class="level2">
 <h2 class="anchored" data-anchor-id="jupyter-notebook-vs-python-script">Jupyter Notebook vs Python Script</h2>
-
-
+<p>Once you have an IDE, you’ll write Python in one of two formats. This distinction trips up a lot of beginners, so it’s worth clearing up early.</p>
+<section id="python-script-.py" class="level3">
+<h3 class="anchored" data-anchor-id="python-script-.py">Python Script — .py</h3>
+<p>A plain text file (ending with .py) containing Python code. When you run it, the entire file executes top to bottom. This is what you use for finished work — automation scripts, production code, tools you want to hand to someone else.</p>
 </section>
+<section id="jupyter-notebook-.ipynb" class="level3">
+<h3 class="anchored" data-anchor-id="jupyter-notebook-.ipynb">Jupyter Notebook — .ipynb</h3>
+<p>A notebook where code lives in individual cells which you can run one at a time. Each cell shows its output directly below it. You can mix code cells with text cells — writing explanations, showing charts, and running code all in the same document. This is actually what is being used right now to write this blog.</p>
+<p>You can think of pyscript as a finished cookbook that you wrote for distribution whereas the notebook is your personal messy notebook with your experimentation and outcome breakdown.</p>
+</section>
+</section>
+<section id="environment-dependency-management" class="level2">
+<h2 class="anchored" data-anchor-id="environment-dependency-management">Environment &amp; Dependency Management</h2>
+<p>Here’s where things get slightly confusing for beginners — and that’s okay, because even experienced developers find this part messy. When you install Python, you also need to manage:</p>
+<ul>
+<li>Which version of Python you’re using</li>
+<li>Which libraries you have installed</li>
+<li>Keeping different projects separate so their libraries don’t conflict with each other</li>
+</ul>
+<p>This is called environment management, and several tools exist to handle it. This is an essential part because it helps avoid conflicts — for example, one project might require PyTorch 2.x while another needs a different version.</p>
+<p>Let’s walk through some of them.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Function</th>
+<th>Category</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Anaconda</td>
+<td>Manages Python, packages, environments</td>
+<td>Distribution &amp; environment management</td>
+</tr>
+<tr class="even">
+<td>pip</td>
+<td>Install Python packages</td>
+<td>Package Management</td>
+</tr>
+<tr class="odd">
+<td>venv</td>
+<td>Creates isolated python envrionments, uv is built on this concept</td>
+<td>Environment management</td>
+</tr>
+<tr class="even">
+<td>uv</td>
+<td>Manages Python versions, environments, packages, dependencies</td>
+<td><strong>What we will be using mostly</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>side note: Find more: - <a href="https://www.anaconda.com/docs/getting-started/main">anaconda</a> - <a href="https://pypi.org/project/pip/">pip</a> - <a href="https://docs.python.org/3/library/venv.html">venv</a> - <a href="https://docs.astral.sh/uv/">uv</a></em></p>
+</section>
+<section id="up-next" class="level2">
+<h2 class="anchored" data-anchor-id="up-next">Up Next</h2>
+<p>We will start with getting everything installed and set up, so you can start simple experiemnts yourself</p>
+
+
 </section>
 
 </main> <!-- /main -->
