@@ -63,6 +63,13 @@
     "text": "Up Next\nWe will start with getting everything installed and set up, so you can start simple experiemnts yourself"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Syeda's Journey",
+    "section": "",
+    "text": "Fundamentals of Python\n\n\n\npython-basics\n\n\n\nSome of the building blocks you will need everywhere\n\n\n\n\n\nOct 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSet Up Your First Notebook\n\n\n\npython-basics\n\n\n\nLet’s start with installation and setting up your first notebook\n\n\n\n\n\nOct 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Python\n\n\n\npython-basics\n\n\n\nLetting you soak your feet into Python and some jargons you might hear\n\n\n\n\n\nSep 20, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To Syeda’s Blog\n\n\n\nwelcome\n\n\n\n\n\n\n\n\n\nAug 24, 2026\n\n\nSyeda Fatema Azmi\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -70,25 +77,102 @@
     "text": "Welcome!\nHere, I share my journey of learning Python and the world of machine learning. I will also share practices, tips, and insights on various topics related to programming, data science, and technology which I wished I had known when I was starting out. I hope that my experiences will be helpful for beginners and enthusiasts alike."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Syeda's Journey",
+    "objectID": "posts/python-fundamental/index.html",
+    "href": "posts/python-fundamental/index.html",
+    "title": "Fundamentals of Python",
     "section": "",
-    "text": "Set Up Your First Notebook\n\n\n\npython-basics\n\n\n\nLet’s start with installation and setting up your first notebook\n\n\n\n\n\nOct 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Python\n\n\n\npython-basics\n\n\n\nLetting you soak your feet into Python and some jargons you might hear\n\n\n\n\n\nSep 20, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To Syeda’s Blog\n\n\n\nwelcome\n\n\n\n\n\n\n\n\n\nAug 24, 2026\n\n\nSyeda Fatema Azmi\n\n\n\n\n\nNo matching items"
+    "text": "Before we write loops, build functions, or touch a dataset — there are a handful of core concepts that everything else is built on. This post covers them all. Think of it as your reference page: read through it once, then come back whenever something in a later post feels unfamiliar. &gt; Remember to follow along and play around"
+  },
+  {
+    "objectID": "posts/python-fundamental/index.html#what-are-we-doing-today",
+    "href": "posts/python-fundamental/index.html#what-are-we-doing-today",
+    "title": "Fundamentals of Python",
+    "section": "",
+    "text": "Before we write loops, build functions, or touch a dataset — there are a handful of core concepts that everything else is built on. This post covers them all. Think of it as your reference page: read through it once, then come back whenever something in a later post feels unfamiliar. &gt; Remember to follow along and play around"
+  },
+  {
+    "objectID": "posts/python-fundamental/index.html#variables-giving-names-to-things",
+    "href": "posts/python-fundamental/index.html#variables-giving-names-to-things",
+    "title": "Fundamentals of Python",
+    "section": "Variables — Giving Names to Things",
+    "text": "Variables — Giving Names to Things\nA variable is a name that points to a value. Instead of writing the same number or piece of text over and over, you store it once and refer to it by name. &gt; It is similar to calling a person by their name instead of referring to them by the description of their parents or ancestors\n\nage = 25\ncity = \"Berlin\"\ntemperature = 36.6\n\n\nage\n\n25\n\n\nThat’s it. The = sign here doesn’t mean equal to — it means store this value under this name. You’re making a label, not solving an equation.\nYou can reassign a variable at any time:\n\nage = 25\nage = 26    # age is now 26, the old value is gone\n\n\nage\n\n26\n\n\nNaming rules to know: - Names are case-sensitive — age and Age are two different variables - Use lowercase with underscores for readability: first_name, not FirstName or firstname - No spaces, no starting with a number, no special characters except _ &gt; Learn a little more here\n\n# Good names\nuser_age = 28\ntotal_score = 150\n\n# These will cause errors\n2fast = 100       # starts with a number\nmy score = 99     # contains a space\n\n\n  Cell In[5], line 6\n    2fast = 100       # starts with a number\n    ^\nSyntaxError: invalid decimal literal"
+  },
+  {
+    "objectID": "posts/python-fundamental/index.html#data-types-what-kind-of-value-is-it",
+    "href": "posts/python-fundamental/index.html#data-types-what-kind-of-value-is-it",
+    "title": "Fundamentals of Python",
+    "section": "Data Types — What Kind of Value Is It?",
+    "text": "Data Types — What Kind of Value Is It?\nEvery value in Python has a type. Python figures this out automatically — you don’t declare it — but knowing what type you’re working with matters, especially when things don’t behave as expected. &gt; You can think of this similar to peoples’ personality types (MBTI/Zodiac signs etc). You dont always need to know what personality a person is but knowing it helps you work better with them.\n\nIntegers — int\nWhole numbers, positive or negative, no decimal point.\n\nscore = 42\ntemperature = -5\nyear = 2024\n\n\n\nFloats — float\nNumbers with a decimal point.\n\nheight = 1.82\npi = 3.14159\nprice = 9.99\n\n\nWorth knowing: Even 10.0 is a float, not an integer — the decimal point is what matters, not whether the decimal part is zero.\n\n\n\nStrings — str\nText. Anything inside quotes — single or double, both work.\n\nname = \"Alice\"\ngreeting = 'Hello, Python!'\n\nStrings can hold anything — letters, numbers, symbols — but they’re always text, not values you can do math with.\n\n# This works\nprint(10 + 5)       \n\n# This breaks\nprint(\"10\" + 5)     # Error — can't add a string and a number\n\n15\n\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[6], line 5\n      1 # This works\n      2 print(10 + 5)       # 15\n      3 \n      4 # This breaks\n----&gt; 5 print(\"10\" + 5)     # Error — can't add a string and a number\n\nTypeError: can only concatenate str (not \"int\") to str\n\n\n\n\n\nBooleans — bool\nOnly two possible values: True or False. Capitalisation matters.\n\nis_student = True\nhas_gpu = False\n\nBooleans might seem trivial now but they’re everywhere — every condition in a loop or an if-statement is producing a boolean behind the scenes."
+  },
+  {
+    "objectID": "posts/python-fundamental/index.html#checking-and-converting-types",
+    "href": "posts/python-fundamental/index.html#checking-and-converting-types",
+    "title": "Fundamentals of Python",
+    "section": "Checking and Converting Types",
+    "text": "Checking and Converting Types\n\ntype() — What type is this?\n\nx = 42\nprint(type(x))      \n\ny = \"hello\"\nprint(type(y))      \n\n&lt;class 'int'&gt;\n&lt;class 'str'&gt;\n\n\nYou’ll use type() constantly when debugging — especially when working with data that comes from files or the internet, where types aren’t always what you expect.\n\n\nConverting Between Types\n\n# String to integer\nage = int(\"28\")\nprint(type(age))   \n\n# Integer to float\nscore = float(10)\nprint(score)       \n\n# Number to string\nlabel = str(42)\nprint(label) \nprint(type(label))         \n\n&lt;class 'int'&gt;\n10.0\n42\n&lt;class 'str'&gt;\n\n\n\nWhen does this matter? If you read data from a CSV file, numbers often arrive as strings. Trying to do math on them will break until you convert them. You’ll run into this the moment you start using pandas."
+  },
+  {
+    "objectID": "posts/python-fundamental/index.html#operators",
+    "href": "posts/python-fundamental/index.html#operators",
+    "title": "Fundamentals of Python",
+    "section": "Operators",
+    "text": "Operators\n\nArithmetic Operators\nYou’ve seen these already in the last post — a quick reference:\n\nprint(10 + 3)    \nprint(10 - 3)  \nprint(10 * 3)   \nprint(10 / 3)   \nprint(10 // 3)  \nprint(10 % 3) \nprint(10 ** 2)  \n\n13\n7\n30\n3.3333333333333335\n3\n1\n100\n\n\n\n\nComparison Operators\nThese return True or False. You’ll need these the moment you write your first loop or condition.\n\nprint(10 &gt; 3)    \nprint(10 &lt; 3)    \nprint(10 == 10)   # == checks equality and = assigns\nprint(10 != 5)    # not equal\nprint(10 &gt;= 10)   \nprint(10 &lt;= 9)    \n\nTrue\nFalse\nTrue\nTrue\nTrue\nFalse\n\n\n\nCommon mistake: Using = when you mean ==. A single = stores a value. A double == compares two values. Python will either throw an error or behave unexpectedly if you mix them up."
+  },
+  {
+    "objectID": "posts/python-fundamental/index.html#lists-ordered-collections",
+    "href": "posts/python-fundamental/index.html#lists-ordered-collections",
+    "title": "Fundamentals of Python",
+    "section": "Lists — Ordered Collections",
+    "text": "Lists — Ordered Collections\nSo far every variable holds one value. A list holds multiple values, in order, in a single variable.\n\ntemperatures = [22.1, 19.8, 25.3, 18.0, 23.5]\nnames = [\"Alice\", \"Bob\", \"Carol\"]\nmixed = [42, \"hello\", True, 3.14]   # lists can hold different types\n\n\nIndexing — Accessing Items\nLists are ordered and each item has a position — called an index — starting from 0.\n\nnames = [\"Alice\", \"Bob\", \"Carol\"]\n\nprint(names[0])    \nprint(names[1])   \nprint(names[-1])   #(negative index counts from the end)\n\nAlice\nBob\nCarol\n\n\n\n\nBasic List Operations\n\nscores = [85, 90, 78]\n\nscores.append(95)       # add an item to the end\nprint(scores)           \n\nprint(len(scores))      # number of items in the list\n\nprint(scores[1:3])      # this is called slicing: items from index 1 up to (not including) 3\n\n[85, 90, 78, 95]\n4\n[90, 78]\n\n\n\nSlicing tip: [1:3] gives you index 1 and 2 — the end number is always excluded. This feels odd at first but becomes natural quickly."
+  },
+  {
+    "objectID": "posts/python-fundamental/index.html#tuples-like-lists-but-fixed",
+    "href": "posts/python-fundamental/index.html#tuples-like-lists-but-fixed",
+    "title": "Fundamentals of Python",
+    "section": "Tuples — Like Lists, But Fixed",
+    "text": "Tuples — Like Lists, But Fixed\nA tuple is similar to a list but immutable — once created, you can’t change it.\n\ncoordinates = (48.8566, 2.3522)   # latitude, longitude of Paris\nprint(coordinates[0])             \n\n48.8566\n\n\nYou’ll mostly encounter tuples when functions return multiple values, or when working with data that shouldn’t change — like coordinates or RGB colour values. You don’t need to create them often, but you’ll see them, so now you know what they are."
+  },
+  {
+    "objectID": "posts/python-fundamental/index.html#dictionaries-key-value-pairs",
+    "href": "posts/python-fundamental/index.html#dictionaries-key-value-pairs",
+    "title": "Fundamentals of Python",
+    "section": "Dictionaries — Key-Value Pairs",
+    "text": "Dictionaries — Key-Value Pairs\nA dictionary stores data as key-value pairs. Instead of accessing items by position like a list, you access them by a meaningful name — the key. &gt; Similar to how language dictionaries work. You want to look up a meaning, you find the wrod in the dictionary\n\nperson = {\n    \"name\": \"Alice\",\n    \"age\": 28,\n    \"city\": \"Berlin\"\n}\n\nprint(person[\"name\"])   \nprint(person[\"age\"])     \n\nAlice\n28\n\n\nYou can add or update entries:\n\nperson[\"job\"] = \"engineer\"      # adds a new key\nperson[\"age\"] = 29              # updates an existing key\nprint(person)\n\n{'name': 'Alice', 'age': 29, 'city': 'Berlin', 'job': 'engineer'}\n\n\n\nWhy does this matter later? Dictionaries are everywhere in data work — JSON files (a common data format) are essentially dictionaries, and pandas works closely with dict-like structures. Getting comfortable with the key-value idea now pays off immediately."
+  },
+  {
+    "objectID": "posts/python-fundamental/index.html#lists-vs-arrays-whats-the-difference",
+    "href": "posts/python-fundamental/index.html#lists-vs-arrays-whats-the-difference",
+    "title": "Fundamentals of Python",
+    "section": "Lists vs Arrays — What’s the Difference?",
+    "text": "Lists vs Arrays — What’s the Difference?\nYou’ll hear the word array a lot once we start working with numpy. It’s worth understanding how it differs from a list before we get there.\nA Python list is flexible — it can hold different types, you can mix integers, strings, and booleans freely, and it’s great for general-purpose use.\nA numpy array is built for numerical computation. It holds one type of data, is significantly faster at math operations, and supports operations across the entire array at once rather than item by item.\n\nscores = [85, 90, 78]\nscores * 2              # this just repeats the list, not multiplies each value\n\n# With a numpy array, you can:\n# scores * 2 would give [170, 180, 156], we will look further into this in the upcoming post\n\n[85, 90, 78, 85, 90, 78]\n\n\n\nThink of a list as a general-purpose container and a numpy array as a mathematical object. When you’re storing and organising things, use a list. When you’re doing computation across many numbers — which is almost everything in data science — you’ll want arrays. We’ll cover numpy properly in its own post."
+  },
+  {
+    "objectID": "posts/python-fundamental/index.html#quick-reference",
+    "href": "posts/python-fundamental/index.html#quick-reference",
+    "title": "Fundamentals of Python",
+    "section": "Quick Reference",
+    "text": "Quick Reference\n\n\n\nConcept\nExample\nNotes\n\n\n\n\nInteger\nx = 10\nWhole number\n\n\nFloat\nx = 10.0\nDecimal number\n\n\nString\nx = \"hello\"\nAlways in quotes\n\n\nBoolean\nx = True\nCapital T/F\n\n\nList\nx = [1, 2, 3]\nOrdered, changeable, square brackets\n\n\nTuple\nx = (1, 2, 3)\nOrdered, fixed, round brackets\n\n\nDictionary\nx = {\"a\": 1}\nKey-value pairs, curly brackets\n\n\ntype()\ntype(x)\nCheck what type a value is\n\n\nlen()\nlen(x)\nCount items in a list\n\n\n\n\nGo here for further data types"
+  },
+  {
+    "objectID": "posts/python-fundamental/index.html#whats-next",
+    "href": "posts/python-fundamental/index.html#whats-next",
+    "title": "Fundamentals of Python",
+    "section": "What’s Next",
+    "text": "What’s Next\nWith these building blocks in place, we can start doing something interesting — making code that reacts and repeats. So next Python starts making decisions and doing repetitive work so you don’t have to."
   },
   {
     "objectID": "posts/python-setup/index.html",
     "href": "posts/python-setup/index.html",
     "title": "Set Up Your First Notebook",
     "section": "",
-    "text": "In the last post we talked about what Python is, the tools around it, and why we’ll be using uv for environment management. Now let’s get everything installed and actually run some code. By the end of this post you’ll have Python running, a notebook open in VS Code, and your first few lines of code executed."
+    "text": "In the last post we talked about what Python is, the tools around it, and why we’ll be using uv for environment management. Now let’s get everything installed and actually run some code. By the end of this post you’ll have Python running, a notebook open in VS Code, and your first few lines of code executed. &gt; The posts from here on are setup so that you follow along. I would suggest to also do any sort of playing you want. This is where we learn."
   },
   {
     "objectID": "posts/python-setup/index.html#what-are-we-doing-today",
     "href": "posts/python-setup/index.html#what-are-we-doing-today",
     "title": "Set Up Your First Notebook",
     "section": "",
-    "text": "In the last post we talked about what Python is, the tools around it, and why we’ll be using uv for environment management. Now let’s get everything installed and actually run some code. By the end of this post you’ll have Python running, a notebook open in VS Code, and your first few lines of code executed."
+    "text": "In the last post we talked about what Python is, the tools around it, and why we’ll be using uv for environment management. Now let’s get everything installed and actually run some code. By the end of this post you’ll have Python running, a notebook open in VS Code, and your first few lines of code executed. &gt; The posts from here on are setup so that you follow along. I would suggest to also do any sort of playing you want. This is where we learn."
   },
   {
     "objectID": "posts/python-setup/index.html#what-so-we-need",

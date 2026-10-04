@@ -12,6 +12,833 @@
 <generator>quarto-1.9.36</generator>
 <lastBuildDate>Sat, 03 Oct 2026 22:00:00 GMT</lastBuildDate>
 <item>
+  <title>Fundamentals of Python</title>
+  <link>https://your-website-url.example.com/posts/python-fundamental/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="what-are-we-doing-today" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-we-doing-today">What are we doing today</h2>
+<p>Before we write loops, build functions, or touch a dataset — there are a handful of core concepts that everything else is built on. This post covers them all. Think of it as your reference page: read through it once, then come back whenever something in a later post feels unfamiliar. &gt; Remember to follow along and play around</p>
+</section>
+<section id="variables-giving-names-to-things" class="level2">
+<h2 class="anchored" data-anchor-id="variables-giving-names-to-things">Variables — Giving Names to Things</h2>
+<p>A variable is a name that points to a value. Instead of writing the same number or piece of text over and over, you store it once and refer to it by name. &gt; It is similar to calling a person by their name instead of referring to them by the description of their parents or ancestors</p>
+<div id="8a4c9f05" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1">age <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25</span></span>
+<span id="cb1-2">city <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Berlin"</span></span>
+<span id="cb1-3">temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">36.6</span></span></code></pre></div></div>
+</div>
+<div id="4a2c652a" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">age</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>25</code></pre>
+</div>
+</div>
+<p>That’s it. The <code>=</code> sign here doesn’t mean <em>equal to</em> — it means <em>store this value under this name</em>. You’re making a label, not solving an equation.</p>
+<p>You can reassign a variable at any time:</p>
+<div id="b0579509" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">age <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25</span></span>
+<span id="cb4-2">age <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">26</span>    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># age is now 26, the old value is gone</span></span></code></pre></div></div>
+</div>
+<div id="11586361" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">age</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>26</code></pre>
+</div>
+</div>
+<p><strong>Naming rules to know:</strong> - Names are case-sensitive — <code>age</code> and <code>Age</code> are two different variables - Use lowercase with underscores for readability: <code>first_name</code>, not <code>FirstName</code> or <code>firstname</code> - No spaces, no starting with a number, no special characters except <code>_</code> &gt; Learn a little more <a href="https://peps.python.org/pep-0008/#naming-conventions">here</a></p>
+<div id="94b5ce32" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Good names</span></span>
+<span id="cb7-2">user_age <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">28</span></span>
+<span id="cb7-3">total_score <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">150</span></span>
+<span id="cb7-4"></span>
+<span id="cb7-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># These will cause errors</span></span>
+<span id="cb7-6"><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">fast</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>       <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># starts with a number</span></span>
+<span id="cb7-7">my score <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">99</span>     <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># contains a space</span></span></code></pre></div></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre>  <span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[5]</span><span class="ansi-green-fg">, line 6</span>
+<span class="ansi-red-fg">    </span><span class="ansi-red-fg">2fast = 100       # starts with a number</span>
+    ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid decimal literal
+</pre>
+</div>
+</div>
+</div>
+</section>
+<section id="data-types-what-kind-of-value-is-it" class="level2">
+<h2 class="anchored" data-anchor-id="data-types-what-kind-of-value-is-it">Data Types — What Kind of Value Is It?</h2>
+<p>Every value in Python has a type. Python figures this out automatically — you don’t declare it — but knowing what type you’re working with matters, especially when things don’t behave as expected. &gt; You can think of this similar to peoples’ personality types (MBTI/Zodiac signs etc). You dont always need to know what personality a person is but knowing it helps you work better with them.</p>
+<section id="integers-int" class="level3">
+<h3 class="anchored" data-anchor-id="integers-int">Integers — <code>int</code></h3>
+<p>Whole numbers, positive or negative, no decimal point.</p>
+<div id="7c664a66" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">score <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span></span>
+<span id="cb8-2">temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span></span>
+<span id="cb8-3">year <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2024</span></span></code></pre></div></div>
+</div>
+</section>
+<section id="floats-float" class="level3">
+<h3 class="anchored" data-anchor-id="floats-float">Floats — <code>float</code></h3>
+<p>Numbers with a decimal point.</p>
+<div id="173c4c1a" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">height <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.82</span></span>
+<span id="cb9-2">pi <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3.14159</span></span>
+<span id="cb9-3">price <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9.99</span></span></code></pre></div></div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Worth knowing:</strong> Even <code>10.0</code> is a float, not an integer — the decimal point is what matters, not whether the decimal part is zero.</p>
+</blockquote>
+</section>
+<section id="strings-str" class="level3">
+<h3 class="anchored" data-anchor-id="strings-str">Strings — <code>str</code></h3>
+<p>Text. Anything inside quotes — single or double, both work.</p>
+<div id="6347073d" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">name <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alice"</span></span>
+<span id="cb10-2">greeting <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Hello, Python!'</span></span></code></pre></div></div>
+</div>
+<p>Strings can hold anything — letters, numbers, symbols — but they’re always <em>text</em>, not values you can do math with.</p>
+<div id="06cfc801" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># This works</span></span>
+<span id="cb11-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)       </span>
+<span id="cb11-3"></span>
+<span id="cb11-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># This breaks</span></span>
+<span id="cb11-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"10"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)     <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Error — can't add a string and a number</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>15</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[6]</span><span class="ansi-green-fg">, line 5</span>
+<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># This works</span>
+<span class="ansi-green-fg">      2</span> print(<span class="ansi-green-fg">10</span> + <span class="ansi-green-fg">5</span>)       <span style="font-style:italic;color:rgb(95,135,135)"># 15</span>
+<span class="ansi-green-fg">      3</span> 
+<span class="ansi-green-fg">      4</span> <span style="font-style:italic;color:rgb(95,135,135)"># This breaks</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">5</span> print(<span class="ansi-yellow-fg">"10"</span> + <span class="ansi-green-fg">5</span>)     <span style="font-style:italic;color:rgb(95,135,135)"># Error — can't add a string and a number</span>
+
+<span class="ansi-red-fg">TypeError</span>: can only concatenate str (not "int") to str</pre>
+</div>
+</div>
+</div>
+</section>
+<section id="booleans-bool" class="level3">
+<h3 class="anchored" data-anchor-id="booleans-bool">Booleans — <code>bool</code></h3>
+<p>Only two possible values: <code>True</code> or <code>False</code>. Capitalisation matters.</p>
+<div id="521b709d" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">is_student <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span></span>
+<span id="cb13-2">has_gpu <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span></span></code></pre></div></div>
+</div>
+<p>Booleans might seem trivial now but they’re everywhere — every condition in a loop or an if-statement is producing a boolean behind the scenes.</p>
+</section>
+</section>
+<section id="checking-and-converting-types" class="level2">
+<h2 class="anchored" data-anchor-id="checking-and-converting-types">Checking and Converting Types</h2>
+<section id="type-what-type-is-this" class="level3">
+<h3 class="anchored" data-anchor-id="type-what-type-is-this"><code>type()</code> — What type is this?</h3>
+<div id="2195d245" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span></span>
+<span id="cb14-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span>(x))      </span>
+<span id="cb14-3"></span>
+<span id="cb14-4">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"hello"</span></span>
+<span id="cb14-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span>(y))      </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'str'&gt;</code></pre>
+</div>
+</div>
+<p>You’ll use <code>type()</code> constantly when debugging — especially when working with data that comes from files or the internet, where types aren’t always what you expect.</p>
+</section>
+<section id="converting-between-types" class="level3">
+<h3 class="anchored" data-anchor-id="converting-between-types">Converting Between Types</h3>
+<div id="b7adf722" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># String to integer</span></span>
+<span id="cb16-2">age <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"28"</span>)</span>
+<span id="cb16-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span>(age))   </span>
+<span id="cb16-4"></span>
+<span id="cb16-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Integer to float</span></span>
+<span id="cb16-6">score <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">float</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)</span>
+<span id="cb16-7"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(score)       </span>
+<span id="cb16-8"></span>
+<span id="cb16-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Number to string</span></span>
+<span id="cb16-10">label <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span>)</span>
+<span id="cb16-11"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(label) </span>
+<span id="cb16-12"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span>(label))         </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'int'&gt;
+10.0
+42
+&lt;class 'str'&gt;</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>When does this matter?</strong> If you read data from a CSV file, numbers often arrive as strings. Trying to do math on them will break until you convert them. You’ll run into this the moment you start using pandas.</p>
+</blockquote>
+</section>
+</section>
+<section id="operators" class="level2">
+<h2 class="anchored" data-anchor-id="operators">Operators</h2>
+<section id="arithmetic-operators" class="level3">
+<h3 class="anchored" data-anchor-id="arithmetic-operators">Arithmetic Operators</h3>
+<p>You’ve seen these already in the last post — a quick reference:</p>
+<div id="d7a71d59" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)    </span>
+<span id="cb18-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)  </span>
+<span id="cb18-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)   </span>
+<span id="cb18-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)   </span>
+<span id="cb18-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">//</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)  </span>
+<span id="cb18-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>) </span>
+<span id="cb18-7"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)  </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>13
+7
+30
+3.3333333333333335
+3
+1
+100</code></pre>
+</div>
+</div>
+</section>
+<section id="comparison-operators" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-operators">Comparison Operators</h3>
+<p>These return <code>True</code> or <code>False</code>. You’ll need these the moment you write your first loop or condition.</p>
+<div id="7230f22d" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)    </span>
+<span id="cb20-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)    </span>
+<span id="cb20-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># == checks equality and = assigns</span></span>
+<span id="cb20-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># not equal</span></span>
+<span id="cb20-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)   </span>
+<span id="cb20-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>)    </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+False
+True
+True
+True
+False</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Common mistake:</strong> Using <code>=</code> when you mean <code>==</code>. A single <code>=</code> stores a value. A double <code>==</code> compares two values. Python will either throw an error or behave unexpectedly if you mix them up.</p>
+</blockquote>
+</section>
+</section>
+<section id="lists-ordered-collections" class="level2">
+<h2 class="anchored" data-anchor-id="lists-ordered-collections">Lists — Ordered Collections</h2>
+<p>So far every variable holds one value. A <strong>list</strong> holds multiple values, in order, in a single variable.</p>
+<div id="18c38892" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1">temperatures <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.8</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25.3</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">18.0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">23.5</span>]</span>
+<span id="cb22-2">names <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alice"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Bob"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Carol"</span>]</span>
+<span id="cb22-3">mixed <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"hello"</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3.14</span>]   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># lists can hold different types</span></span></code></pre></div></div>
+</div>
+<section id="indexing-accessing-items" class="level3">
+<h3 class="anchored" data-anchor-id="indexing-accessing-items">Indexing — Accessing Items</h3>
+<p>Lists are ordered and each item has a position — called an <strong>index</strong> — starting from 0.</p>
+<div id="437ff937" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1">names <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alice"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Bob"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Carol"</span>]</span>
+<span id="cb23-2"></span>
+<span id="cb23-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(names[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>])    </span>
+<span id="cb23-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(names[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])   </span>
+<span id="cb23-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(names[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#(negative index counts from the end)</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Alice
+Bob
+Carol</code></pre>
+</div>
+</div>
+</section>
+<section id="basic-list-operations" class="level3">
+<h3 class="anchored" data-anchor-id="basic-list-operations">Basic List Operations</h3>
+<div id="102bf6b9" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1">scores <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">85</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">90</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">78</span>]</span>
+<span id="cb25-2"></span>
+<span id="cb25-3">scores.append(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">95</span>)       <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># add an item to the end</span></span>
+<span id="cb25-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(scores)           </span>
+<span id="cb25-5"></span>
+<span id="cb25-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(scores))      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># number of items in the list</span></span>
+<span id="cb25-7"></span>
+<span id="cb25-8"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(scores[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>:<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>])      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># this is called slicing: items from index 1 up to (not including) 3</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[85, 90, 78, 95]
+4
+[90, 78]</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Slicing tip:</strong> <code>[1:3]</code> gives you index 1 and 2 — the end number is always excluded. This feels odd at first but becomes natural quickly.</p>
+</blockquote>
+</section>
+</section>
+<section id="tuples-like-lists-but-fixed" class="level2">
+<h2 class="anchored" data-anchor-id="tuples-like-lists-but-fixed">Tuples — Like Lists, But Fixed</h2>
+<p>A tuple is similar to a list but <strong>immutable</strong> — once created, you can’t change it.</p>
+<div id="2e4f3891" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1">coordinates <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">48.8566</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2.3522</span>)   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># latitude, longitude of Paris</span></span>
+<span id="cb27-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(coordinates[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>])             </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>48.8566</code></pre>
+</div>
+</div>
+<p>You’ll mostly encounter tuples when functions return multiple values, or when working with data that shouldn’t change — like coordinates or RGB colour values. You don’t need to create them often, but you’ll see them, so now you know what they are.</p>
+</section>
+<section id="dictionaries-key-value-pairs" class="level2">
+<h2 class="anchored" data-anchor-id="dictionaries-key-value-pairs">Dictionaries — Key-Value Pairs</h2>
+<p>A dictionary stores data as <strong>key-value pairs</strong>. Instead of accessing items by position like a list, you access them by a meaningful name — the key. &gt; Similar to how language dictionaries work. You want to look up a meaning, you find the wrod in the dictionary</p>
+<div id="ae9c0f9f" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1">person <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb29-2">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alice"</span>,</span>
+<span id="cb29-3">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"age"</span>: <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">28</span>,</span>
+<span id="cb29-4">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"city"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Berlin"</span></span>
+<span id="cb29-5">}</span>
+<span id="cb29-6"></span>
+<span id="cb29-7"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(person[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>])   </span>
+<span id="cb29-8"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(person[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"age"</span>])     </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Alice
+28</code></pre>
+</div>
+</div>
+<p>You can add or update entries:</p>
+<div id="d35b1ecb" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1">person[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"job"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"engineer"</span>      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># adds a new key</span></span>
+<span id="cb31-2">person[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"age"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">29</span>              <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># updates an existing key</span></span>
+<span id="cb31-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(person)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'name': 'Alice', 'age': 29, 'city': 'Berlin', 'job': 'engineer'}</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Why does this matter later?</strong> Dictionaries are everywhere in data work — JSON files (a common data format) are essentially dictionaries, and pandas works closely with dict-like structures. Getting comfortable with the key-value idea now pays off immediately.</p>
+</blockquote>
+</section>
+<section id="lists-vs-arrays-whats-the-difference" class="level2">
+<h2 class="anchored" data-anchor-id="lists-vs-arrays-whats-the-difference">Lists vs Arrays — What’s the Difference?</h2>
+<p>You’ll hear the word <strong>array</strong> a lot once we start working with numpy. It’s worth understanding how it differs from a list before we get there.</p>
+<p>A Python <strong>list</strong> is flexible — it can hold different types, you can mix integers, strings, and booleans freely, and it’s great for general-purpose use.</p>
+<p>A <strong>numpy array</strong> is built for numerical computation. It holds one type of data, is significantly faster at math operations, and supports operations across the entire array at once rather than item by item.</p>
+<div id="cef7f358" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1">scores <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">85</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">90</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">78</span>]</span>
+<span id="cb33-2">scores <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>              <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># this just repeats the list, not multiplies each value</span></span>
+<span id="cb33-3"></span>
+<span id="cb33-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># With a numpy array, you can:</span></span>
+<span id="cb33-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># scores * 2 would give [170, 180, 156], we will look further into this in the upcoming post</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>[85, 90, 78, 85, 90, 78]</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Think of a list as a general-purpose container and a numpy array as a mathematical object. When you’re storing and organising things, use a list. When you’re doing computation across many numbers — which is almost everything in data science — you’ll want arrays. We’ll cover numpy properly in its own post.</p>
+</blockquote>
+</section>
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Integer</td>
+<td><code>x = 10</code></td>
+<td>Whole number</td>
+</tr>
+<tr class="even">
+<td>Float</td>
+<td><code>x = 10.0</code></td>
+<td>Decimal number</td>
+</tr>
+<tr class="odd">
+<td>String</td>
+<td><code>x = "hello"</code></td>
+<td>Always in quotes</td>
+</tr>
+<tr class="even">
+<td>Boolean</td>
+<td><code>x = True</code></td>
+<td>Capital T/F</td>
+</tr>
+<tr class="odd">
+<td>List</td>
+<td><code>x = [1, 2, 3]</code></td>
+<td>Ordered, changeable, square brackets</td>
+</tr>
+<tr class="even">
+<td>Tuple</td>
+<td><code>x = (1, 2, 3)</code></td>
+<td>Ordered, fixed, round brackets</td>
+</tr>
+<tr class="odd">
+<td>Dictionary</td>
+<td><code>x = {"a": 1}</code></td>
+<td>Key-value pairs, curly brackets</td>
+</tr>
+<tr class="even">
+<td><code>type()</code></td>
+<td><code>type(x)</code></td>
+<td>Check what type a value is</td>
+</tr>
+<tr class="odd">
+<td><code>len()</code></td>
+<td><code>len(x)</code></td>
+<td>Count items in a list</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>Go <a href="https://docs.python.org/3/library/datatypes.html">here</a> for further data types</p>
+</blockquote>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s Next</h2>
+<p>With these building blocks in place, we can start doing something interesting — making code that <em>reacts</em> and <em>repeats</em>. So next Python starts making decisions and doing repetitive work so you don’t have to.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>python-basics</category>
+  <guid>https://your-website-url.example.com/posts/python-fundamental/</guid>
+  <pubDate>Sat, 03 Oct 2026 22:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Set Up Your First Notebook</title>
   <link>https://your-website-url.example.com/posts/python-setup/</link>
   <description><![CDATA[ 
@@ -22,7 +849,7 @@
 
 <section id="what-are-we-doing-today" class="level2">
 <h2 class="anchored" data-anchor-id="what-are-we-doing-today">What are we doing today</h2>
-<p>In the last post we talked about what Python is, the tools around it, and why we’ll be using uv for environment management. Now let’s get everything installed and actually run some code. By the end of this post you’ll have Python running, a notebook open in VS Code, and your first few lines of code executed.</p>
+<p>In the last post we talked about what Python is, the tools around it, and why we’ll be using uv for environment management. Now let’s get everything installed and actually run some code. By the end of this post you’ll have Python running, a notebook open in VS Code, and your first few lines of code executed. &gt; The posts from here on are setup so that you follow along. I would suggest to also do any sort of playing you want. This is where we learn.</p>
 </section>
 <section id="what-so-we-need" class="level2">
 <h2 class="anchored" data-anchor-id="what-so-we-need">What so we need?</h2>
