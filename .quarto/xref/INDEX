@@ -13,5 +13,8 @@
   },
   "posts/welcome/index.qmd": {
     "index.html": "eac567ee"
+  },
+  "posts/python-setup/index.ipynb": {
+    "index.html": "55244fc4"
   }
 }

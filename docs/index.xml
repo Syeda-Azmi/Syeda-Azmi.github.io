@@ -10,7 +10,266 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Learn Python with me</description>
 <generator>quarto-1.9.36</generator>
-<lastBuildDate>Sat, 19 Sep 2026 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 03 Oct 2026 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Set Up Your First Notebook</title>
+  <link>https://your-website-url.example.com/posts/python-setup/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="what-are-we-doing-today" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-we-doing-today">What are we doing today</h2>
+<p>In the last post we talked about what Python is, the tools around it, and why we’ll be using uv for environment management. Now let’s get everything installed and actually run some code. By the end of this post you’ll have Python running, a notebook open in VS Code, and your first few lines of code executed.</p>
+</section>
+<section id="what-so-we-need" class="level2">
+<h2 class="anchored" data-anchor-id="what-so-we-need">What so we need?</h2>
+<p>Here’s everything this post sets up, in order:</p>
+<ol type="1">
+<li><strong>Python</strong> — via uv, which installs and manages it for us</li>
+<li><strong>uv</strong> — our environment and package manager</li>
+<li><strong>VS Code</strong> — the editor we write and run code in</li>
+<li><strong>Two VS Code extensions</strong> — so VS Code understands notebooks</li>
+</ol>
+<section id="step-1-install-vs-code" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-install-vs-code">Step 1 — Install VS Code</h3>
+<p>VS Code is the application you’ll write all your code in. It’s free, lightweight, and works well for everything from beginner notebooks to serious projects.</p>
+<p>Download from: <a href="https://code.visualstudio.com">code.visualstudio.com</a></p>
+<p>Click <strong>Download for Windows</strong>, run the installer, and keep all the default options. When it asks about adding VS Code to PATH — <strong>check that box</strong>. It’ll save you trouble later.</p>
+</section>
+<section id="step-2-install-uv" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-install-uv">Step 2 — Install uv</h3>
+<p>uv is what we’ll use to install Python and manage packages. Open the <strong>Windows PowerShell</strong> — search for it in the Start menu — and paste this command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1">powershell <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>ExecutionPolicy ByPass <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>c <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"irm https://astral.sh/uv/install.ps1 | iex"</span></span></code></pre></div></div>
+<p>Press Enter and let it finish. Once done, <strong>close PowerShell and open a new one</strong>. This is important — the new window picks up the changes the installer made.</p>
+<p>Verify it worked by running:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1">uv <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">--</span>version</span></code></pre></div></div>
+<p><em>Note: You should see a version number printed. If you do, uv is installed</em></p>
+<blockquote class="blockquote">
+<p><strong>What just happened?</strong> That command downloaded and ran uv’s installer script directly from the internet. The new PowerShell window is needed because your system’s PATH — the list of places Windows looks for programs — only refreshes when a new terminal opens.</p>
+</blockquote>
+</section>
+<section id="step-3-install-python-via-uv" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-install-python-via-uv">Step 3 — Install Python via uv</h3>
+<p>Now let’s use uv to install Python. Still in PowerShell, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1">uv python install <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3.12</span></span></code></pre></div></div>
+<p>This downloads and installs Python 3.12 — a stable, widely supported version. uv handles the whole thing; no need to visit python.org or run a separate installer.</p>
+<p>Check it worked:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1">uv run python <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">--</span>version</span></code></pre></div></div>
+<p>You should see <code>Python 3.12.x</code> printed.</p>
+<blockquote class="blockquote">
+<p><strong>Why uv and not python.org?</strong> Both work. But since we’re using uv to manage our projects anyway, letting it own the Python installation too keeps everything consistent and in one place.</p>
+</blockquote>
+</section>
+<section id="step-4-install-vs-code-extensions" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-install-vs-code-extensions">Step 4 — Install VS Code Extensions</h3>
+<p>Open VS Code. On the left sidebar you’ll see a puzzle-piece icon — that’s the <strong>Extensions</strong> panel. Click it and search for these two, installing both:</p>
+<ul>
+<li><strong>Python</strong> — by Microsoft</li>
+<li><strong>Jupyter</strong> — by Microsoft</li>
+</ul>
+<p>These extensions are what allow VS Code to run Python code and open notebook files. Without them, VS Code is just a text editor.</p>
+</section>
+<section id="step-5-create-a-folder-and-open-your-first-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-create-a-folder-and-open-your-first-notebook">Step 5 — Create a Folder and Open Your First Notebook</h3>
+<p>Create a folder somewhere you’ll remember — your Desktop or Documents is fine. Call it something like <code>python-blog</code> or <code>my-notebooks</code>.</p>
+<p>In VS Code: - Go to <code>File → Open Folder</code> and open that folder - Click the <strong>New File</strong> icon in the file explorer panel - Name it <code>first_notebook.ipynb</code></p>
+<p>The <code>.ipynb</code> extension is what tells VS Code this is a Jupyter notebook.</p>
+</section>
+<section id="step-6-select-a-kernel" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-select-a-kernel">Step 6 — Select a Kernel</h3>
+<p>When the notebook opens, you’ll see a button in the top-right corner that says <strong>Select Kernel</strong>. Click it, then choose <strong>Python Environments</strong>, and select the Python 3.12 version that uv installed.</p>
+<blockquote class="blockquote">
+<p><strong>What is a kernel?</strong> It’s the engine that actually runs your code behind the scenes. When you click run on a cell, the kernel is what receives and executes it. Selecting the right one just means pointing your notebook at the Python installation you want to use.</p>
+</blockquote>
+</section>
+</section>
+<section id="a-note-on-environments-do-you-need-one-right-now" class="level2">
+<h2 class="anchored" data-anchor-id="a-note-on-environments-do-you-need-one-right-now">A Note on Environments — Do You Need One Right Now?</h2>
+<p>In the previous post we talked about virtual environments — isolated Python setups that keep projects separate from each other. The honest answer is: <strong>not yet</strong>.</p>
+<p>Right now you have one Python installation and no projects pulling in conflicting libraries. For the next several posts where we’re learning the basics, running directly from your uv-managed Python is perfectly fine.</p>
+<p>Environments become important when: - You’re working on multiple projects that need different library versions - You start installing data science libraries like pandas or PyTorch - You want your setup to be reproducible — shareable with others or deployable somewhere</p>
+<p>We’ll set up a proper environment when we reach that point, and we’ll walk through it in full when the time comes. For now, don’t let it be a blocker.</p>
+</section>
+<section id="lets-write-some-code" class="level2">
+<h2 class="anchored" data-anchor-id="lets-write-some-code">Let’s Write Some Code</h2>
+<p>You should now have your notebook open with a kernel selected. Click the <strong>+ Code</strong> button to add a cell, and let’s go.</p>
+<section id="cell-1-say-hello" class="level3">
+<h3 class="anchored" data-anchor-id="cell-1-say-hello">Cell 1 — Say Hello</h3>
+<div id="d64b5498" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># This is a comment — Python ignores anything after the # symbol</span></span>
+<span id="cb5-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Comments are how you leave notes in your code, for yourself or others</span></span>
+<span id="cb5-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># It's a good habit to annotate what your code is doing</span></span>
+<span id="cb5-4"></span>
+<span id="cb5-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Hello, Python!"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Python!</code></pre>
+</div>
+</div>
+<p>Press <strong>Shift + Enter</strong> to run the cell. The output appears directly below it, and the cursor moves to the next cell automatically. That’s the core rhythm of working in notebooks — write in a cell, run it, see the result, move on.</p>
+</section>
+<section id="cell-2-basic-math" class="level3">
+<h3 class="anchored" data-anchor-id="cell-2-basic-math">Cell 2 — Basic Math</h3>
+<div id="49a93160" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Python can do arithmetic just like a calculator</span></span>
+<span id="cb7-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Addition</span></span>
+<span id="cb7-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Subtraction</span></span>
+<span id="cb7-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Multiplication</span></span>
+<span id="cb7-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Division</span></span>
+<span id="cb7-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Powers — this gives us 10 squared</span></span>
+<span id="cb7-7"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Remainder — how much is left after dividing</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>13
+7
+30
+3.3333333333333335
+100
+1</code></pre>
+</div>
+</div>
+<p>Run this cell the same way. Notice each <code>print()</code> gives its own line of output. The <code>#</code> comments on each line are there to remind you what each operator does — this is exactly the kind of annotation that makes notebooks readable when you come back to them later.</p>
+<blockquote class="blockquote">
+<p>Tip: In a Jupyter notebook, you don’t always need print() to see a result. If the last line of a cell is an expression — like 10 + 3 — the notebook will automatically display its output. Try it: delete the print() and just write 10 + 3 in a cell. However, this only works for values — writing “Hello, Python!” alone will display it, but it won’t look or behave the same as print(), and plain text like Hello, Python! without quotes would just cause an error. For text output, print() is the reliable habit to keep.*</p>
+</blockquote>
+</section>
+<section id="cell-3-a-peek-at-whats-coming" class="level3">
+<h3 class="anchored" data-anchor-id="cell-3-a-peek-at-whats-coming">Cell 3 — A Peek at What’s Coming</h3>
+<div id="ca538b92" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># What if we want to reuse a value instead of typing it every time?</span></span>
+<span id="cb9-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># We can give it a name — this is called a variable</span></span>
+<span id="cb9-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># We won't go deep on this yet, but try running this and see what happens</span></span>
+<span id="cb9-4"></span>
+<span id="cb9-5">result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb9-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(result)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>13</code></pre>
+</div>
+</div>
+<p>You don’t need to fully understand this yet — we’ll break down variables properly in the next post. But notice that Python stored the result of <code>10 + 3</code> and printed it when you asked. That idea — giving names to values — is one of the most fundamental things in programming, and it’s what we’re covering next.</p>
+</section>
+</section>
+<section id="what-youve-done" class="level2">
+<h2 class="anchored" data-anchor-id="what-youve-done">What You’ve Done</h2>
+<p>In this post you:</p>
+<ul>
+<li>Installed uv and used it to install Python</li>
+<li>Set up VS Code with the right extensions</li>
+<li>Opened a real Jupyter notebook and selected a kernel</li>
+<li>Ran your first cells and understood the Shift+Enter workflow</li>
+<li>Learned what comments are and why they matter</li>
+</ul>
+<p>👏 You are done with your first notebook!</p>
+
+
+</section>
+
+ ]]></description>
+  <category>python-basics</category>
+  <guid>https://your-website-url.example.com/posts/python-setup/</guid>
+  <pubDate>Sat, 03 Oct 2026 22:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Introduction to Python</title>
   <link>https://your-website-url.example.com/posts/python-intro/</link>
