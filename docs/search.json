@@ -67,14 +67,21 @@
     "href": "index.html",
     "title": "Syeda's Journey",
     "section": "",
-    "text": "Fundamentals of Python\n\n\n\npython-basics\n\n\n\nSome of the building blocks you will need everywhere\n\n\n\n\n\nOct 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nSet Up Your First Notebook\n\n\n\npython-basics\n\n\n\nLet’s start with installation and setting up your first notebook\n\n\n\n\n\nOct 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Python\n\n\n\npython-basics\n\n\n\nLetting you soak your feet into Python and some jargons you might hear\n\n\n\n\n\nSep 20, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To Syeda’s Blog\n\n\n\nwelcome\n\n\n\n\n\n\n\n\n\nAug 24, 2026\n\n\nSyeda Fatema Azmi\n\n\n\n\n\nNo matching items"
+    "text": "Beginner-friendly Data Science diary, from your first print() to machine learning."
+  },
+  {
+    "objectID": "index.html#learn-with-me-through-my-journey",
+    "href": "index.html#learn-with-me-through-my-journey",
+    "title": "Syeda's Journey",
+    "section": "",
+    "text": "Beginner-friendly Data Science diary, from your first print() to machine learning."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Welcome!\nHere, I share my journey of learning Python and the world of machine learning. I will also share practices, tips, and insights on various topics related to programming, data science, and technology which I wished I had known when I was starting out. I hope that my experiences will be helpful for beginners and enthusiasts alike."
+    "text": "Welcome!\nHere, I share my journey of learning Python and the world of machine learning. I will also share practices, tips, and insights on various topics related to programming, data science, and technology as I learn them. My goal here is to keep a diary of my learnings in a way that is accessible and useful for others too."
   },
   {
     "objectID": "posts/python-fundamental/index.html",

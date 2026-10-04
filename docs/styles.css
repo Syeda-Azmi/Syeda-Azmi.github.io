@@ -1,4 +1,29 @@
-/* css styles */
-body {
-  text-align: justify;
+/* Banner container: the image sits behind a dark overlay so white text stays readable */
+.hero {
+  background-image:
+    linear-gradient(rgba(20, 40, 70, 0.55), rgba(20, 40, 70, 0.55)),  /* overlay layer */
+    url("images/banner.jpg");                                         /* image layer */
+  background-size: cover;        /* fill the box, cropping if needed */
+  background-position: center;
+  border-radius: 12px;
+  padding: 4rem 2rem;            /* controls banner height */
+  margin-bottom: 2.5rem;         /* space before the post list */
+  color: white;
+}
+
+.hero-content h2 {
+  color: white;
+  margin-top: 0;
+  border-bottom: none;           /* removes the default heading underline */
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  margin-bottom: 0;
+  max-width: 36rem;
+}
+
+/* Fixes the stretched word spacing in your post descriptions */
+.listing-description {
+  text-align: left;
 }

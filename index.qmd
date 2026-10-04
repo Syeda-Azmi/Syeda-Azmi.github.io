@@ -11,5 +11,12 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
+::: {.hero}
+::: {.hero-content}
+## Learn with me through my journey
+
+Beginner-friendly Data Science diary, from your first print() to machine learning.
+:::
+:::
 
 

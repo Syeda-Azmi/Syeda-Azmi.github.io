@@ -15,4 +15,4 @@ about:
 
 Welcome!
 
-Here, I share my journey of learning Python and the world of machine learning. I will also share practices, tips, and insights on various topics related to programming, data science, and technology which I wished I had known when I was starting out. I hope that my experiences will be helpful for beginners and enthusiasts alike.
+Here, I share my journey of learning Python and the world of machine learning. I will also share practices, tips, and insights on various topics related to programming, data science, and technology as I learn them. My goal here is to keep a diary of my learnings in a way that is accessible and useful for others too.
