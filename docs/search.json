@@ -63,6 +63,76 @@
     "text": "Up Next\nWe will start with getting everything installed and set up, so you can start simple experiemnts yourself"
   },
   {
+    "objectID": "posts/python-condition-loop/index.html",
+    "href": "posts/python-condition-loop/index.html",
+    "title": "Conditions and Loops",
+    "section": "",
+    "text": "So hopefully you have played around and can code! But is it slightly boring doing everything one line at a time. Right now, you cannot make any decisions or if you want to print each item in a list, you have to do it via indexing one by one. Not efficient!\nIn this post we give Python the ability to make decisions and repeat actions — two things that turn a few lines of code into something genuinely useful. These are the tools you’ll use in almost every piece of code you ever write."
+  },
+  {
+    "objectID": "posts/python-condition-loop/index.html#what-are-we-doing-today",
+    "href": "posts/python-condition-loop/index.html#what-are-we-doing-today",
+    "title": "Conditions and Loops",
+    "section": "",
+    "text": "So hopefully you have played around and can code! But is it slightly boring doing everything one line at a time. Right now, you cannot make any decisions or if you want to print each item in a list, you have to do it via indexing one by one. Not efficient!\nIn this post we give Python the ability to make decisions and repeat actions — two things that turn a few lines of code into something genuinely useful. These are the tools you’ll use in almost every piece of code you ever write."
+  },
+  {
+    "objectID": "posts/python-condition-loop/index.html#if-elif-else-making-decisions",
+    "href": "posts/python-condition-loop/index.html#if-elif-else-making-decisions",
+    "title": "Conditions and Loops",
+    "section": "If / Elif / Else — Making Decisions",
+    "text": "If / Elif / Else — Making Decisions\nA condition lets your code take different paths depending on whether something is true or false. This is the foundation of all logic in programming.\n\nIt works exactly like how we carry out logic in our minds. If it rains, I will take the umbrella, otherwise I won’t. That is the essence of the If-Elif-Else logic.\n\n\ntemperature = 35\n\nif temperature &gt; 30:\n    print(\"It's hot outside\")\n\nIt's hot outside\n\n\nIf the condition (temperature &gt; 30) is True, the indented block runs. If it’s False, nothing happens.\n\nIndentation matters in Python. The code inside an if block must be indented — 4 spaces or one Tab. Python uses indentation to know what belongs inside the block. Get it wrong and you’ll get an error. Try it!\n\n\nAdding else\n\ntemperature = 22\n\nif temperature &gt; 30:\n    print(\"It's hot outside\")\nelse:\n    print(\"It's not that hot\")\n\nIt's not that hot\n\n\nelse is the fallback — it runs when the condition is False.\n\n\nAdding elif — Multiple Conditions\nelif stands for else if. It lets you check multiple conditions in sequence:\n\ntemperature = 18\n\nif temperature &gt; 30:\n    print(\"Hot\")\nelif temperature &gt; 20:\n    print(\"Warm\")\nelif temperature &gt; 10:\n    print(\"Cool\")\nelse:\n    print(\"Cold\")\n\nCool\n\n\nPython checks each condition top to bottom and runs the first one that’s true, then skips the rest. Only one block ever runs.\n\n\nCombining Conditions\nYou can combine conditions with and / or:\n\ntemperature = 28\nhumidity = 85\n\nif temperature &gt; 25 and humidity &gt; 80:\n    print(\"Hot and humid — not great\")\n\nif temperature &gt; 35 or humidity &gt; 90:\n    print(\"Extreme conditions\")\n\nHot and humid — not great\n\n\n\n\nand — both conditions must be true\nor — at least one must be true"
+  },
+  {
+    "objectID": "posts/python-condition-loop/index.html#for-loops-repeating-over-a-sequence",
+    "href": "posts/python-condition-loop/index.html#for-loops-repeating-over-a-sequence",
+    "title": "Conditions and Loops",
+    "section": "For Loops — Repeating Over a Sequence",
+    "text": "For Loops — Repeating Over a Sequence\nA for loop goes through a collection — a list, a range of numbers, anything iterable — and runs the same block of code for each item.\n\ntemperatures = [22.1, 19.8, 25.3, 18.0, 23.5]\n\nfor temp in temperatures:\n    print(temp)\n\n22.1\n19.8\n25.3\n18.0\n23.5\n\n\nThe variable temp takes on each value in the list one at a time. You choose the name — temp, t, value — it doesn’t matter as long as you use the same name inside the block.\n\nImagine you have a page with many shapes and you need to colour each one. It doesnt matter what colour you are using. You just need to color them. That’s what it means by the name doesn’t matter, what matters is whether you are being able to print it.\n\n\nUsing range()\nWhen you want to repeat something a set number of times, range() generates a sequence of numbers for you:\n\nfor i in range(5):\n    print(i)      \n\n0\n1\n2\n3\n4\n\n\nrange(5) gives you 0 through 4 — five numbers, starting at 0. You can also control the start, stop and step:\n\nfor i in range(2, 10, 2):\n    print(i)        \n\n2\n4\n6\n8\n\n\nrange(start, stop, step) — stop is always excluded.\n\n\nCombining a Loop with a Condition\nThis is where things start to get interesting — and this pattern appears constantly in data work:\n\ntemperatures = [22.1, 35.8, 19.3, 38.1, 24.5]\n\nfor temp in temperatures:\n    if temp &gt; 30:\n        print(f\"{temp} is above threshold\")\n    else:\n        print(f\"{temp} is normal\")\n\n22.1 is normal\n35.8 is above threshold\n19.3 is normal\n38.1 is above threshold\n24.5 is normal\n\n\n\n\nenumerate() — When You Need the Index Too\nSometimes you want both the item and its position:\n\ntemperatures = [22.1, 19.8, 25.3]\n\nfor index, temp in enumerate(temperatures):\n    print(f\"Day {index + 1}: {temp}°C\")\n\nDay 1: 22.1°C\nDay 2: 19.8°C\nDay 3: 25.3°C\n\n\n\nenumerate() is worth knowing early — you’ll use it constantly when working with lists and later with dataframes."
+  },
+  {
+    "objectID": "posts/python-condition-loop/index.html#while-loops-repeating-until-a-condition-is-met",
+    "href": "posts/python-condition-loop/index.html#while-loops-repeating-until-a-condition-is-met",
+    "title": "Conditions and Loops",
+    "section": "While Loops — Repeating Until a Condition Is Met",
+    "text": "While Loops — Repeating Until a Condition Is Met\nA while loop keeps running as long as a condition is True. Unlike a for loop where you know how many times it will run, a while loop runs an unknown number of times — until something changes.\n\ncount = 0\n\nwhile count &lt; 5:\n    print(f\"Count is {count}\")\n    count += 1     \n\nCount is 0\nCount is 1\nCount is 2\nCount is 3\nCount is 4\n\n\n\nInfinite loops: If the condition never becomes False, the loop runs forever and freezes your notebook. Always make sure something inside the loop is changing the condition. If you do get stuck, click the Stop button (■) in the toolbar to interrupt the kernel.\n\nWhile loops are less common in data science than for loops, but they’re useful when you’re waiting for something — a model to converge, a value to reach a threshold, a process to complete."
+  },
+  {
+    "objectID": "posts/python-condition-loop/index.html#break-and-continue-controlling-loop-behaviour",
+    "href": "posts/python-condition-loop/index.html#break-and-continue-controlling-loop-behaviour",
+    "title": "Conditions and Loops",
+    "section": "Break and Continue — Controlling Loop Behaviour",
+    "text": "Break and Continue — Controlling Loop Behaviour\nThese two keywords give you finer control over what happens inside a loop.\n\nbreak — Exit the Loop Early\nStop the loop entirely when a condition is met, even if there are items left:\n\ntemperatures = [22.1, 19.8, 35.8, 24.3, 38.1]\n\nfor temp in temperatures:\n    if temp &gt; 30:\n        print(f\"High value found: {temp} — stopping\")\n        break\n    print(f\"{temp} is normal\")\n\n22.1 is normal\n19.8 is normal\nHigh value found: 35.8 — stopping\n\n\nOnce break runs, the loop ends immediately. Everything after it in the list is ignored.\n\n\ncontinue — Skip to the Next Item\nSkip the rest of the current iteration and move straight to the next one:\n\ntemperatures = [22.1, None, 19.8, None, 25.3]\n\nfor temp in temperatures:\n    if temp is None:\n        continue        # skip missing values, keep going\n    print(f\"{temp}°C\")\n\n22.1°C\n19.8°C\n25.3°C\n\n\n\ncontinue in data work: Missing or invalid values are extremely common in real datasets. The pattern of checking for bad data and skipping it before processing is something you’ll write constantly — and continue is often the cleanest way to do it."
+  },
+  {
+    "objectID": "posts/python-condition-loop/index.html#mini-project-analysing-2-weeks-of-temperature-readings",
+    "href": "posts/python-condition-loop/index.html#mini-project-analysing-2-weeks-of-temperature-readings",
+    "title": "Conditions and Loops",
+    "section": "Mini Project — Analysing 2 Weeks of Temperature Readings",
+    "text": "Mini Project — Analysing 2 Weeks of Temperature Readings\nLet’s put everything together. Imagine you’ve collected daily temperature readings for two weeks and want to do a basic analysis — flag anomalies, skip missing data, summarise what you found. Decide on your own rules. What are the values, what is an anomaly, what should the output look like.\n\n# Two weeks of daily temperature readings (°C)\n# None represents a missing reading — sensor failure, etc.\nreadings = [22.1, 19.8, 35.8, None, 23.5, 38.2, 21.0,\n            None, 24.3, 20.1, 19.5, 41.0, 22.8, 36.5]\n\n# Threshold above which we consider a reading anomalous\nthreshold = 30\n\n# We'll collect valid readings and track anomalies\nvalid_readings = []\nanomalies = []\nmissing_count = 0\n\n# Loop through every reading\nfor index, temp in enumerate(readings):\n    day = index + 1\n\n    # Skip missing values\n    if temp is None:\n        print(f\"Day {day}: No reading recorded\")\n        missing_count += 1\n        continue\n\n    # Flag anomalies\n    if temp &gt; threshold:\n        print(f\"Day {day}: {temp}°C — above threshold\")\n        anomalies.append(temp)\n    else:\n        print(f\"Day {day}: {temp}°C — normal\")\n\n    # Collect all valid readings for summary\n    valid_readings.append(temp)\n\n# Summary\nprint(\"\\n--- Summary ---\")\nprint(f\"Total days: {len(readings)}\")\nprint(f\"Missing readings: {missing_count}\")\nprint(f\"Valid readings: {len(valid_readings)}\")\nprint(f\"Anomalies detected: {len(anomalies)}\")\n\n# Only calculate average if we have valid data\nif len(valid_readings) &gt; 0:\n    average = sum(valid_readings) / len(valid_readings)\n    print(f\"Average temperature: {average:.1f}°C\")\n\nif len(anomalies) &gt; 0:\n    print(f\"Highest anomaly: {max(anomalies)}°C\")\n\nDay 1: 22.1°C — normal\nDay 2: 19.8°C — normal\nDay 3: 35.8°C — above threshold\nDay 4: No reading recorded\nDay 5: 23.5°C — normal\nDay 6: 38.2°C — above threshold\nDay 7: 21.0°C — normal\nDay 8: No reading recorded\nDay 9: 24.3°C — normal\nDay 10: 20.1°C — normal\nDay 11: 19.5°C — normal\nDay 12: 41.0°C — above threshold\nDay 13: 22.8°C — normal\nDay 14: 36.5°C — above threshold\n\n--- Summary ---\nTotal days: 14\nMissing readings: 2\nValid readings: 12\nAnomalies detected: 4\nAverage temperature: 27.1°C\nHighest anomaly: 41.0°C\n\n\nWhat this uses: - A for loop with enumerate() to go through every reading with its day number - continue to skip missing values cleanly - if / elif / else to categorise each reading - Two lists being built up as the loop runs — a pattern you’ll see constantly in data processing - A summary block using conditions to avoid errors on empty data\n\nNotice the structure: The loop handles one reading at a time. The summary happens after the loop finishes. This separation — process row by row, summarise at the end — is exactly how data pipelines work, just at much larger scale."
+  },
+  {
+    "objectID": "posts/python-condition-loop/index.html#quick-reference",
+    "href": "posts/python-condition-loop/index.html#quick-reference",
+    "title": "Conditions and Loops",
+    "section": "Quick Reference",
+    "text": "Quick Reference\n\n\n\n\n\n\n\n\nConcept\nSyntax\nWhen to use\n\n\n\n\nif\nif x &gt; 0:\nRun code when condition is true\n\n\nelif\nelif x == 0:\nCheck another condition if previous was false\n\n\nelse\nelse:\nFallback when all conditions are false\n\n\nfor\nfor item in list:\nRepeat over a known collection\n\n\nrange()\nrange(start, stop, step)\nGenerate a sequence of numbers\n\n\nenumerate()\nfor i, val in enumerate(list):\nLoop with index and value\n\n\nwhile\nwhile condition:\nRepeat until condition becomes false\n\n\nbreak\ninside a loop\nExit loop immediately\n\n\ncontinue\ninside a loop\nSkip current iteration, keep going"
+  },
+  {
+    "objectID": "posts/python-condition-loop/index.html#whats-next",
+    "href": "posts/python-condition-loop/index.html#whats-next",
+    "title": "Conditions and Loops",
+    "section": "What’s Next",
+    "text": "What’s Next\nYou can now make decisions and repeat actions. The next piece is functions — a way to package logic you’ve written into something reusable, so you don’t repeat yourself across your code. That’s what we’re covering next."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Welcome!\nHere, I share my journey of learning Python and the world of machine learning. I will also share practices, tips, and insights on various topics related to programming, data science, and technology as I learn them. My goal here is to keep a diary of my learnings in a way that is accessible and useful for others too."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Syeda's Journey",
@@ -77,25 +147,18 @@
     "text": "Beginner-friendly Data Science diary, from your first print() to machine learning."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Welcome!\nHere, I share my journey of learning Python and the world of machine learning. I will also share practices, tips, and insights on various topics related to programming, data science, and technology as I learn them. My goal here is to keep a diary of my learnings in a way that is accessible and useful for others too."
-  },
-  {
     "objectID": "posts/python-fundamental/index.html",
     "href": "posts/python-fundamental/index.html",
     "title": "Fundamentals of Python",
     "section": "",
-    "text": "Before we write loops, build functions, or touch a dataset — there are a handful of core concepts that everything else is built on. This post covers them all. Think of it as your reference page: read through it once, then come back whenever something in a later post feels unfamiliar. &gt; Remember to follow along and play around"
+    "text": "Before we write loops, build functions, or touch a dataset — there are a handful of core concepts that everything else is built on. This post covers them all. Think of it as your reference page: read through it once, then come back whenever something in a later post feels unfamiliar.\n\nRemember to follow along and play around"
   },
   {
     "objectID": "posts/python-fundamental/index.html#what-are-we-doing-today",
     "href": "posts/python-fundamental/index.html#what-are-we-doing-today",
     "title": "Fundamentals of Python",
     "section": "",
-    "text": "Before we write loops, build functions, or touch a dataset — there are a handful of core concepts that everything else is built on. This post covers them all. Think of it as your reference page: read through it once, then come back whenever something in a later post feels unfamiliar. &gt; Remember to follow along and play around"
+    "text": "Before we write loops, build functions, or touch a dataset — there are a handful of core concepts that everything else is built on. This post covers them all. Think of it as your reference page: read through it once, then come back whenever something in a later post feels unfamiliar.\n\nRemember to follow along and play around"
   },
   {
     "objectID": "posts/python-fundamental/index.html#variables-giving-names-to-things",

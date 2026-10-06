@@ -10,7 +10,1021 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Learn Python with me</description>
 <generator>quarto-1.9.36</generator>
-<lastBuildDate>Sat, 03 Oct 2026 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 04 Oct 2026 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Conditions and Loops</title>
+  <link>https://your-website-url.example.com/posts/python-condition-loop/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="what-are-we-doing-today" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-we-doing-today">What are we doing today</h2>
+<p>So hopefully you have played around and can code! But is it slightly boring doing everything one line at a time. Right now, you cannot make any decisions or if you want to print each item in a list, you have to do it via indexing one by one. Not efficient!</p>
+<p>In this post we give Python the ability to make decisions and repeat actions — two things that turn a few lines of code into something genuinely useful. These are the tools you’ll use in almost every piece of code you ever write.</p>
+</section>
+<section id="if-elif-else-making-decisions" class="level2">
+<h2 class="anchored" data-anchor-id="if-elif-else-making-decisions">If / Elif / Else — Making Decisions</h2>
+<p>A condition lets your code take different paths depending on whether something is true or false. This is the foundation of all logic in programming.</p>
+<blockquote class="blockquote">
+<p>It works exactly like how we carry out logic in our minds. If it rains, I will take the umbrella, otherwise I won’t. That is the essence of the If-Elif-Else logic.</p>
+</blockquote>
+<div id="3b363641" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1">temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35</span></span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>:</span>
+<span id="cb1-4">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"It's hot outside"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>It's hot outside</code></pre>
+</div>
+</div>
+<p>If the condition (<code>temperature &gt; 30</code>) is <code>True</code>, the indented block runs. If it’s <code>False</code>, nothing happens.</p>
+<blockquote class="blockquote">
+<p><strong>Indentation matters in Python.</strong> The code inside an <code>if</code> block must be indented — 4 spaces or one Tab. Python uses indentation to know what belongs inside the block. Get it wrong and you’ll get an error. Try it!</p>
+</blockquote>
+<section id="adding-else" class="level3">
+<h3 class="anchored" data-anchor-id="adding-else">Adding <code>else</code></h3>
+<div id="0d391345" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22</span></span>
+<span id="cb3-2"></span>
+<span id="cb3-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>:</span>
+<span id="cb3-4">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"It's hot outside"</span>)</span>
+<span id="cb3-5"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb3-6">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"It's not that hot"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>It's not that hot</code></pre>
+</div>
+</div>
+<p><code>else</code> is the fallback — it runs when the condition is <code>False</code>.</p>
+</section>
+<section id="adding-elif-multiple-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="adding-elif-multiple-conditions">Adding <code>elif</code> — Multiple Conditions</h3>
+<p><code>elif</code> stands for <em>else if</em>. It lets you check multiple conditions in sequence:</p>
+<div id="984a1f65" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">18</span></span>
+<span id="cb5-2"></span>
+<span id="cb5-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>:</span>
+<span id="cb5-4">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Hot"</span>)</span>
+<span id="cb5-5"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>:</span>
+<span id="cb5-6">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Warm"</span>)</span>
+<span id="cb5-7"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>:</span>
+<span id="cb5-8">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cool"</span>)</span>
+<span id="cb5-9"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb5-10">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cold"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cool</code></pre>
+</div>
+</div>
+<p>Python checks each condition top to bottom and runs the <strong>first one that’s true</strong>, then skips the rest. Only one block ever runs.</p>
+</section>
+<section id="combining-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="combining-conditions">Combining Conditions</h3>
+<p>You can combine conditions with <code>and</code> / <code>or</code>:</p>
+<div id="eac446ff" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">28</span></span>
+<span id="cb7-2">humidity <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">85</span></span>
+<span id="cb7-3"></span>
+<span id="cb7-4"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">and</span> humidity <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">80</span>:</span>
+<span id="cb7-5">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Hot and humid — not great"</span>)</span>
+<span id="cb7-6"></span>
+<span id="cb7-7"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temperature <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">or</span> humidity <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">90</span>:</span>
+<span id="cb7-8">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Extreme conditions"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hot and humid — not great</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<ul>
+<li><code>and</code> — both conditions must be true</li>
+<li><code>or</code> — at least one must be true</li>
+</ul>
+</blockquote>
+</section>
+</section>
+<section id="for-loops-repeating-over-a-sequence" class="level2">
+<h2 class="anchored" data-anchor-id="for-loops-repeating-over-a-sequence">For Loops — Repeating Over a Sequence</h2>
+<p>A <code>for</code> loop goes through a collection — a list, a range of numbers, anything iterable — and runs the same block of code for each item.</p>
+<div id="c266d447" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">temperatures <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.8</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25.3</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">18.0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">23.5</span>]</span>
+<span id="cb9-2"></span>
+<span id="cb9-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> temperatures:</span>
+<span id="cb9-4">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(temp)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>22.1
+19.8
+25.3
+18.0
+23.5</code></pre>
+</div>
+</div>
+<p>The variable <code>temp</code> takes on each value in the list one at a time. You choose the name — <code>temp</code>, <code>t</code>, <code>value</code> — it doesn’t matter as long as you use the same name inside the block.</p>
+<blockquote class="blockquote">
+<p>Imagine you have a page with many shapes and you need to colour each one. It doesnt matter what colour you are using. You just need to color them. That’s what it means by the name doesn’t matter, what matters is whether you are being able to print it.</p>
+</blockquote>
+<section id="using-range" class="level3">
+<h3 class="anchored" data-anchor-id="using-range">Using <code>range()</code></h3>
+<p>When you want to repeat something a set number of times, <code>range()</code> generates a sequence of numbers for you:</p>
+<div id="9dfe8185" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>):</span>
+<span id="cb11-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(i)      </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+1
+2
+3
+4</code></pre>
+</div>
+</div>
+<p><code>range(5)</code> gives you 0 through 4 — five numbers, starting at 0. You can also control the start, stop and step:</p>
+<div id="3fd57686" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>):</span>
+<span id="cb13-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(i)        </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2
+4
+6
+8</code></pre>
+</div>
+</div>
+<p><code>range(start, stop, step)</code> — stop is always excluded.</p>
+</section>
+<section id="combining-a-loop-with-a-condition" class="level3">
+<h3 class="anchored" data-anchor-id="combining-a-loop-with-a-condition">Combining a Loop with a Condition</h3>
+<p>This is where things start to get interesting — and this pattern appears constantly in data work:</p>
+<div id="8ff7e8ff" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">temperatures <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35.8</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.3</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">38.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">24.5</span>]</span>
+<span id="cb15-2"></span>
+<span id="cb15-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> temperatures:</span>
+<span id="cb15-4">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temp <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>:</span>
+<span id="cb15-5">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> is above threshold"</span>)</span>
+<span id="cb15-6">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb15-7">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> is normal"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>22.1 is normal
+35.8 is above threshold
+19.3 is normal
+38.1 is above threshold
+24.5 is normal</code></pre>
+</div>
+</div>
+</section>
+<section id="enumerate-when-you-need-the-index-too" class="level3">
+<h3 class="anchored" data-anchor-id="enumerate-when-you-need-the-index-too"><code>enumerate()</code> — When You Need the Index Too</h3>
+<p>Sometimes you want both the item and its position:</p>
+<div id="5c68f303" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">temperatures <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.8</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25.3</span>]</span>
+<span id="cb17-2"></span>
+<span id="cb17-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> index, temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>(temperatures):</span>
+<span id="cb17-4">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Day </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>index <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Day 1: 22.1°C
+Day 2: 19.8°C
+Day 3: 25.3°C</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><code>enumerate()</code> is worth knowing early — you’ll use it constantly when working with lists and later with dataframes.</p>
+</blockquote>
+</section>
+</section>
+<section id="while-loops-repeating-until-a-condition-is-met" class="level2">
+<h2 class="anchored" data-anchor-id="while-loops-repeating-until-a-condition-is-met">While Loops — Repeating Until a Condition Is Met</h2>
+<p>A <code>while</code> loop keeps running as long as a condition is <code>True</code>. Unlike a <code>for</code> loop where you know how many times it will run, a <code>while</code> loop runs an <em>unknown</em> number of times — until something changes.</p>
+<div id="c1d6f415" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1">count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span></span>
+<span id="cb19-2"></span>
+<span id="cb19-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">while</span> count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>:</span>
+<span id="cb19-4">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Count is </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>count<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb19-5">    count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>     </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Count is 0
+Count is 1
+Count is 2
+Count is 3
+Count is 4</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Infinite loops:</strong> If the condition never becomes <code>False</code>, the loop runs forever and freezes your notebook. Always make sure something inside the loop is changing the condition. If you do get stuck, click the <strong>Stop</strong> button (■) in the toolbar to interrupt the kernel.</p>
+</blockquote>
+<p>While loops are less common in data science than <code>for</code> loops, but they’re useful when you’re waiting for something — a model to converge, a value to reach a threshold, a process to complete.</p>
+</section>
+<section id="break-and-continue-controlling-loop-behaviour" class="level2">
+<h2 class="anchored" data-anchor-id="break-and-continue-controlling-loop-behaviour">Break and Continue — Controlling Loop Behaviour</h2>
+<p>These two keywords give you finer control over what happens inside a loop.</p>
+<section id="break-exit-the-loop-early" class="level3">
+<h3 class="anchored" data-anchor-id="break-exit-the-loop-early"><code>break</code> — Exit the Loop Early</h3>
+<p>Stop the loop entirely when a condition is met, even if there are items left:</p>
+<div id="ae6ff258" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1">temperatures <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.8</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35.8</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">24.3</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">38.1</span>]</span>
+<span id="cb21-2"></span>
+<span id="cb21-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> temperatures:</span>
+<span id="cb21-4">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temp <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>:</span>
+<span id="cb21-5">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"High value found: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> — stopping"</span>)</span>
+<span id="cb21-6">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">break</span></span>
+<span id="cb21-7">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> is normal"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>22.1 is normal
+19.8 is normal
+High value found: 35.8 — stopping</code></pre>
+</div>
+</div>
+<p>Once <code>break</code> runs, the loop ends immediately. Everything after it in the list is ignored.</p>
+</section>
+<section id="continue-skip-to-the-next-item" class="level3">
+<h3 class="anchored" data-anchor-id="continue-skip-to-the-next-item"><code>continue</code> — Skip to the Next Item</h3>
+<p>Skip the rest of the current iteration and move straight to the next one:</p>
+<div id="561f40f3" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1">temperatures <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.8</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25.3</span>]</span>
+<span id="cb23-2"></span>
+<span id="cb23-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> temperatures:</span>
+<span id="cb23-4">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">is</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>:</span>
+<span id="cb23-5">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">continue</span>        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># skip missing values, keep going</span></span>
+<span id="cb23-6">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>22.1°C
+19.8°C
+25.3°C</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong><code>continue</code> in data work:</strong> Missing or invalid values are extremely common in real datasets. The pattern of checking for bad data and skipping it before processing is something you’ll write constantly — and <code>continue</code> is often the cleanest way to do it.</p>
+</blockquote>
+</section>
+</section>
+<section id="mini-project-analysing-2-weeks-of-temperature-readings" class="level2">
+<h2 class="anchored" data-anchor-id="mini-project-analysing-2-weeks-of-temperature-readings">Mini Project — Analysing 2 Weeks of Temperature Readings</h2>
+<p>Let’s put everything together. Imagine you’ve collected daily temperature readings for two weeks and want to do a basic analysis — flag anomalies, skip missing data, summarise what you found. Decide on your own rules. What are the values, what is an anomaly, what should the output look like.</p>
+<div id="980a8705" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Two weeks of daily temperature readings (°C)</span></span>
+<span id="cb25-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># None represents a missing reading — sensor failure, etc.</span></span>
+<span id="cb25-3">readings <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.8</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35.8</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">23.5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">38.2</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">21.0</span>,</span>
+<span id="cb25-4">            <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">24.3</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">41.0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.8</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">36.5</span>]</span>
+<span id="cb25-5"></span>
+<span id="cb25-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Threshold above which we consider a reading anomalous</span></span>
+<span id="cb25-7">threshold <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span></span>
+<span id="cb25-8"></span>
+<span id="cb25-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># We'll collect valid readings and track anomalies</span></span>
+<span id="cb25-10">valid_readings <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> []</span>
+<span id="cb25-11">anomalies <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> []</span>
+<span id="cb25-12">missing_count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span></span>
+<span id="cb25-13"></span>
+<span id="cb25-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Loop through every reading</span></span>
+<span id="cb25-15"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> index, temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>(readings):</span>
+<span id="cb25-16">    day <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> index <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb25-17"></span>
+<span id="cb25-18">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Skip missing values</span></span>
+<span id="cb25-19">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">is</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>:</span>
+<span id="cb25-20">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Day </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>day<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">: No reading recorded"</span>)</span>
+<span id="cb25-21">        missing_count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb25-22">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">continue</span></span>
+<span id="cb25-23"></span>
+<span id="cb25-24">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Flag anomalies</span></span>
+<span id="cb25-25">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temp <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> threshold:</span>
+<span id="cb25-26">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Day </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>day<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C — above threshold"</span>)</span>
+<span id="cb25-27">        anomalies.append(temp)</span>
+<span id="cb25-28">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb25-29">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Day </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>day<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C — normal"</span>)</span>
+<span id="cb25-30"></span>
+<span id="cb25-31">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Collect all valid readings for summary</span></span>
+<span id="cb25-32">    valid_readings.append(temp)</span>
+<span id="cb25-33"></span>
+<span id="cb25-34"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Summary</span></span>
+<span id="cb25-35"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">--- Summary ---"</span>)</span>
+<span id="cb25-36"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Total days: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(readings)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb25-37"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Missing readings: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>missing_count<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb25-38"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Valid readings: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(valid_readings)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb25-39"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Anomalies detected: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(anomalies)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb25-40"></span>
+<span id="cb25-41"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Only calculate average if we have valid data</span></span>
+<span id="cb25-42"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(valid_readings) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>:</span>
+<span id="cb25-43">    average <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(valid_readings) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(valid_readings)</span>
+<span id="cb25-44">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Average temperature: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>average<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.1f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C"</span>)</span>
+<span id="cb25-45"></span>
+<span id="cb25-46"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(anomalies) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>:</span>
+<span id="cb25-47">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Highest anomaly: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(anomalies)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Day 1: 22.1°C — normal
+Day 2: 19.8°C — normal
+Day 3: 35.8°C — above threshold
+Day 4: No reading recorded
+Day 5: 23.5°C — normal
+Day 6: 38.2°C — above threshold
+Day 7: 21.0°C — normal
+Day 8: No reading recorded
+Day 9: 24.3°C — normal
+Day 10: 20.1°C — normal
+Day 11: 19.5°C — normal
+Day 12: 41.0°C — above threshold
+Day 13: 22.8°C — normal
+Day 14: 36.5°C — above threshold
+
+--- Summary ---
+Total days: 14
+Missing readings: 2
+Valid readings: 12
+Anomalies detected: 4
+Average temperature: 27.1°C
+Highest anomaly: 41.0°C</code></pre>
+</div>
+</div>
+<p><strong>What this uses:</strong> - A <code>for</code> loop with <code>enumerate()</code> to go through every reading with its day number - <code>continue</code> to skip missing values cleanly - <code>if / elif / else</code> to categorise each reading - Two lists being built up as the loop runs — a pattern you’ll see constantly in data processing - A summary block using conditions to avoid errors on empty data</p>
+<blockquote class="blockquote">
+<p><strong>Notice the structure:</strong> The loop handles one reading at a time. The summary happens after the loop finishes. This separation — process row by row, summarise at the end — is exactly how data pipelines work, just at much larger scale.</p>
+</blockquote>
+</section>
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Syntax</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>if</code></td>
+<td><code>if x &gt; 0:</code></td>
+<td>Run code when condition is true</td>
+</tr>
+<tr class="even">
+<td><code>elif</code></td>
+<td><code>elif x == 0:</code></td>
+<td>Check another condition if previous was false</td>
+</tr>
+<tr class="odd">
+<td><code>else</code></td>
+<td><code>else:</code></td>
+<td>Fallback when all conditions are false</td>
+</tr>
+<tr class="even">
+<td><code>for</code></td>
+<td><code>for item in list:</code></td>
+<td>Repeat over a known collection</td>
+</tr>
+<tr class="odd">
+<td><code>range()</code></td>
+<td><code>range(start, stop, step)</code></td>
+<td>Generate a sequence of numbers</td>
+</tr>
+<tr class="even">
+<td><code>enumerate()</code></td>
+<td><code>for i, val in enumerate(list):</code></td>
+<td>Loop with index and value</td>
+</tr>
+<tr class="odd">
+<td><code>while</code></td>
+<td><code>while condition:</code></td>
+<td>Repeat until condition becomes false</td>
+</tr>
+<tr class="even">
+<td><code>break</code></td>
+<td>inside a loop</td>
+<td>Exit loop immediately</td>
+</tr>
+<tr class="odd">
+<td><code>continue</code></td>
+<td>inside a loop</td>
+<td>Skip current iteration, keep going</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s Next</h2>
+<p>You can now make decisions and repeat actions. The next piece is <strong>functions</strong> — a way to package logic you’ve written into something reusable, so you don’t repeat yourself across your code. That’s what we’re covering next.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>python-basics</category>
+  <guid>https://your-website-url.example.com/posts/python-condition-loop/</guid>
+  <pubDate>Sun, 04 Oct 2026 22:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Fundamentals of Python</title>
   <link>https://your-website-url.example.com/posts/python-fundamental/</link>
@@ -22,7 +1036,10 @@
 
 <section id="what-are-we-doing-today" class="level2">
 <h2 class="anchored" data-anchor-id="what-are-we-doing-today">What are we doing today</h2>
-<p>Before we write loops, build functions, or touch a dataset — there are a handful of core concepts that everything else is built on. This post covers them all. Think of it as your reference page: read through it once, then come back whenever something in a later post feels unfamiliar. &gt; Remember to follow along and play around</p>
+<p>Before we write loops, build functions, or touch a dataset — there are a handful of core concepts that everything else is built on. This post covers them all. Think of it as your reference page: read through it once, then come back whenever something in a later post feels unfamiliar.</p>
+<blockquote class="blockquote">
+<p>Remember to follow along and play around</p>
+</blockquote>
 </section>
 <section id="variables-giving-names-to-things" class="level2">
 <h2 class="anchored" data-anchor-id="variables-giving-names-to-things">Variables — Giving Names to Things</h2>
