@@ -1,6 +1,5 @@
 ---
-title: "Welcome To Syeda's Blog"
-author: "Syeda Fatema Azmi"
+title: "Welcome To Syeda's Journey"
 date: "2026-08-24"
 categories: [welcome]
 ---

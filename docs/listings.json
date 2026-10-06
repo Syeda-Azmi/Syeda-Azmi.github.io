@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/python-functions/index.html",
       "/posts/python-condition-loop/index.html",
       "/posts/python-fundamental/index.html",
       "/posts/python-setup/index.html",

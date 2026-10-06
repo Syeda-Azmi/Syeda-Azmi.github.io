@@ -10,7 +10,1136 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Learn Python with me</description>
 <generator>quarto-1.9.36</generator>
-<lastBuildDate>Sun, 04 Oct 2026 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 05 Oct 2026 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Functions</title>
+  <link>https://your-website-url.example.com/posts/python-functions/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="what-are-we-doing-today" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-we-doing-today">What are we doing today</h2>
+<p>In this post we learn to write our own function. These are logic packaged into reusable and named blocks that lets us keep our code clean, readable and easy to fix (debug). Functions are one of the most important things in programming. And a good news, we have been using in-built functions already. Every time we’ve called <code>print()</code>, <code>len()</code>, or <code>type()</code>, we’ve been using a function.</p>
+</section>
+<section id="what-is-a-function" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-function">What is a Function?</h2>
+<p>A function is a named block of code that does a specific task. You define it once, and call it by name whenever you need it — once, ten times, inside a loop, anywhere.</p>
+<p>Without functions:</p>
+<div id="bf2e43fd" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Calculating a average for three different datasets</span></span>
+<span id="cb1-2">total1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.8</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25.3</span></span>
+<span id="cb1-3">average1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> total1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb1-4"></span>
+<span id="cb1-5">total2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30.5</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">28.1</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">33.2</span></span>
+<span id="cb1-6">average2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> total2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb1-7"></span>
+<span id="cb1-8">total3 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15.0</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">18.4</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20.1</span></span>
+<span id="cb1-9">average3 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> total3 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb1-10"></span>
+<span id="cb1-11"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span> (<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"average1: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>average1<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.2f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">, average2: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>average2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.2f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">, average3: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>average3<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.2f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>average1: 22.40, average2: 30.60, average3: 17.83</code></pre>
+</div>
+</div>
+<p>With a function:</p>
+<div id="f9b14f7f" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> calculate_average(numbers):</span>
+<span id="cb3-2">    total <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(numbers)</span>
+<span id="cb3-3">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> total <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(numbers)</span>
+<span id="cb3-4"></span>
+<span id="cb3-5">average1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> calculate_average([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.8</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25.3</span>])</span>
+<span id="cb3-6">average2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> calculate_average([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30.5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">28.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">33.2</span>])</span>
+<span id="cb3-7">average3 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> calculate_average([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15.0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">18.4</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20.1</span>])</span>
+<span id="cb3-8"></span>
+<span id="cb3-9"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span> (<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"average1: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>average1<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.2f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">, average2: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>average2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.2f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">, average3: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>average3<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.2f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>average1: 22.40, average2: 30.60, average3: 17.83</code></pre>
+</div>
+</div>
+<p>Same result. Less repetition. And if something needs fixing, you fix it in one place.</p>
+</section>
+<section id="anatomy-of-a-function" class="level2">
+<h2 class="anchored" data-anchor-id="anatomy-of-a-function">Anatomy of a Function</h2>
+<div id="8701f759" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> greet(name):</span>
+<span id="cb5-2">    message <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Hello, </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>name<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">!"</span></span>
+<span id="cb5-3">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> message</span></code></pre></div></div>
+</div>
+<ul>
+<li><code>def</code> — keyword that tells Python you’re defining a function</li>
+<li><code>greet</code> — the name you’re giving it (same naming rules as variables)</li>
+<li><code>(name)</code> — the <strong>parameter</strong>: a placeholder for the value you’ll pass in</li>
+<li><code>return</code> — sends a value back to whoever called the function</li>
+</ul>
+<p>Calling it:</p>
+<div id="ed86f045" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> greet(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Syeda"</span>)</span>
+<span id="cb6-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(result)       </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Syeda!</code></pre>
+</div>
+</div>
+<p>The value you pass in (<code>"Syeda"</code>) is called an <strong>argument</strong>. The placeholder inside the function (<code>name</code>) is the <strong>parameter</strong>. People use these words interchangeably — now you know both.</p>
+</section>
+<section id="functions-without-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="functions-without-parameters">Functions Without Parameters</h2>
+<p>Not every function needs input:</p>
+<div id="af606417" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> print_separator():</span>
+<span id="cb8-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">40</span>)</span>
+<span id="cb8-3"></span>
+<span id="cb8-4">print_separator()</span>
+<span id="cb8-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Some data here"</span>)</span>
+<span id="cb8-6">print_separator()</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>----------------------------------------
+Some data here
+----------------------------------------</code></pre>
+</div>
+</div>
+<p>Useful for things you repeat often — formatting, headers, dividers.</p>
+</section>
+<section id="functions-without-return" class="level2">
+<h2 class="anchored" data-anchor-id="functions-without-return">Functions Without Return</h2>
+<p>Not every function needs to return a value. Some just <em>do</em> something:</p>
+<div id="e96df994" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> describe_temperature(temp):</span>
+<span id="cb10-2">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temp <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>:</span>
+<span id="cb10-3">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C — Hot"</span>)</span>
+<span id="cb10-4">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> temp <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>:</span>
+<span id="cb10-5">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C — Warm"</span>)</span>
+<span id="cb10-6">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb10-7">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C — Cool"</span>)</span>
+<span id="cb10-8"></span>
+<span id="cb10-9">describe_temperature(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35</span>)</span>
+<span id="cb10-10">describe_temperature(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22</span>)</span>
+<span id="cb10-11">describe_temperature(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>35°C — Hot
+22°C — Warm
+10°C — Cool</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Good to know:</strong> If a function has no <code>return</code> statement, it returns <code>None</code> automatically. This is fine when you’re using a function purely for its side effects — printing, saving a file, updating something.</p>
+</blockquote>
+</section>
+<section id="multiple-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-parameters">Multiple Parameters</h2>
+<p>Functions can take as many parameters as they need:</p>
+<div id="8438c820" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> calculate_bmi(weight_kg, height_m):</span>
+<span id="cb12-2">    bmi <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> weight_kg <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> (height_m <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb12-3">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> bmi</span>
+<span id="cb12-4"></span>
+<span id="cb12-5">bmi <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> calculate_bmi(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">70</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.75</span>)</span>
+<span id="cb12-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"BMI: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>bmi<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.1f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span></code></pre></div></div>
+</div>
+</section>
+<section id="default-parameter-values" class="level2">
+<h2 class="anchored" data-anchor-id="default-parameter-values">Default Parameter Values</h2>
+<p>You can give parameters a default value, making them optional when calling the function:</p>
+<div id="6d2f0ea8" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> describe_reading(temp, unit<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"C"</span>):</span>
+<span id="cb13-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Temperature: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>unit<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb13-3"></span>
+<span id="cb13-4">describe_reading(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.5</span>)          <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># uses default: °C</span></span>
+<span id="cb13-5">describe_reading(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">72.5</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"F"</span>)     <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># overrides default: °F</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Temperature: 22.5°C
+Temperature: 72.5°F</code></pre>
+</div>
+</div>
+<p>Parameters with defaults must always come <em>after</em> parameters without defaults.</p>
+</section>
+<section id="returning-multiple-values" class="level2">
+<h2 class="anchored" data-anchor-id="returning-multiple-values">Returning Multiple Values</h2>
+<p>A function can return more than one value — Python packs them into a tuple automatically:</p>
+<div id="3ccbf056" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> analyse_readings(readings):</span>
+<span id="cb15-2">    average <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(readings) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(readings)</span>
+<span id="cb15-3">    maximum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(readings)</span>
+<span id="cb15-4">    minimum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">min</span>(readings)</span>
+<span id="cb15-5">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> average, maximum, minimum</span>
+<span id="cb15-6"></span>
+<span id="cb15-7">avg, high, low <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> analyse_readings([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35.8</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.3</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">38.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">24.5</span>])</span>
+<span id="cb15-8"></span>
+<span id="cb15-9"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Average: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>avg<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.1f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C"</span>)</span>
+<span id="cb15-10"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Highest: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>high<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C"</span>)</span>
+<span id="cb15-11"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Lowest:  </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>low<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Average: 28.0°C
+Highest: 38.1°C
+Lowest:  19.3°C</code></pre>
+</div>
+</div>
+<p>The three variables on the left unpack the three returned values in order. This is called <strong>tuple unpacking</strong> and you’ll see it constantly.</p>
+</section>
+<section id="functions-calling-other-functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions-calling-other-functions">Functions Calling Other Functions</h2>
+<p>Functions can call other functions — this is how you build up complexity in layers while keeping each piece simple:</p>
+<div id="251effba" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> is_anomaly(temp, threshold<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>):</span>
+<span id="cb17-2">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> temp <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> threshold</span>
+<span id="cb17-3"></span>
+<span id="cb17-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> classify_reading(temp):</span>
+<span id="cb17-5">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">is</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>:</span>
+<span id="cb17-6">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"missing"</span></span>
+<span id="cb17-7">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> is_anomaly(temp):</span>
+<span id="cb17-8">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"anomaly"</span></span>
+<span id="cb17-9">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb17-10">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"normal"</span></span>
+<span id="cb17-11"></span>
+<span id="cb17-12">readings <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35.8</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.3</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">38.1</span>]</span>
+<span id="cb17-13"></span>
+<span id="cb17-14"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> readings:</span>
+<span id="cb17-15">    status <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> classify_reading(temp)</span>
+<span id="cb17-16">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>temp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> → </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>status<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>22.1 → normal
+None → missing
+35.8 → anomaly
+19.3 → normal
+38.1 → anomaly</code></pre>
+</div>
+</div>
+<p><code>classify_reading</code> delegates part of its job to <code>is_anomaly</code>. Each function stays focused on one thing. This is good practice — functions that do one thing well are easier to understand, test and fix.</p>
+<blockquote class="blockquote">
+<p>When functions start calling other functions, it would be good to skip the function definition and start from understanding the ‘main’ part of the code. And slowly trace back to see what the functions are doing.</p>
+</blockquote>
+</section>
+<section id="scope-where-variables-live" class="level2">
+<h2 class="anchored" data-anchor-id="scope-where-variables-live">Scope — Where Variables Live</h2>
+<p>Variables created inside a function only exist inside that function. They’re not visible outside:</p>
+<div id="59a8c4b8" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> calculate_area(radius):</span>
+<span id="cb19-2">    pi <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3.14159</span>          <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># this variable only exists inside this function</span></span>
+<span id="cb19-3">    area <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pi <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> radius <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb19-4">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> area</span>
+<span id="cb19-5"></span>
+<span id="cb19-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(calculate_area(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>))</span>
+<span id="cb19-7"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(pi)                 <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># NameError — pi doesn't exist out here</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>78.53975</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[11]</span><span class="ansi-green-fg">, line 7</span>
+<span class="ansi-green-fg">      3</span>     area = pi * radius ** <span class="ansi-green-fg">2</span>
+<span class="ansi-green-fg">      4</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> area
+<span class="ansi-green-fg">      5</span> 
+<span class="ansi-green-fg">      6</span> print(calculate_area(<span class="ansi-green-fg">5</span>))
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">7</span> print(pi)                 <span style="font-style:italic;color:rgb(95,135,135)"># NameError — pi doesn't exist out here</span>
+
+<span class="ansi-red-fg">NameError</span>: name 'pi' is not defined</pre>
+</div>
+</div>
+</div>
+<p>This is called <strong>scope</strong>. It means functions are self-contained — they don’t accidentally interfere with the rest of your code, and the rest of your code doesn’t interfere with them.</p>
+<blockquote class="blockquote">
+<p><strong>The rule:</strong> Variables defined inside a function are <em>local</em> to that function. Variables defined outside — at the top of your notebook — are <em>global</em> and can be read from anywhere, though modifying them from inside a function is something to be careful with.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Analogy:</strong> Imagine these local and global variables like your fave celebrities. Globally known celebrities are known by everyone, everyone can access their information everywhere very easily. But a not so popular new artist from Bangladesh will be known by very niche people in Bangladesh. Information is also not available.</p>
+</blockquote>
+</section>
+<section id="mini-examples-to-try" class="level2">
+<h2 class="anchored" data-anchor-id="mini-examples-to-try">Mini Examples to Try</h2>
+<p>These get progressively more involved. Each one uses concepts from earlier posts.</p>
+<p><strong>1. Celsius to Fahrenheit converter</strong></p>
+<div id="9babc692" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> celsius_to_fahrenheit(celsius):</span>
+<span id="cb21-2">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> (celsius <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">32</span></span>
+<span id="cb21-3"></span>
+<span id="cb21-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(celsius_to_fahrenheit(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>))   </span>
+<span id="cb21-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(celsius_to_fahrenheit(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>))</span>
+<span id="cb21-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(celsius_to_fahrenheit(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22</span>))  </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>32.0
+212.0
+71.6</code></pre>
+</div>
+</div>
+<p><strong>2. Count anomalies in a list</strong></p>
+<div id="53614c07" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> count_anomalies(readings, threshold<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>):</span>
+<span id="cb23-2">    count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span></span>
+<span id="cb23-3">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> readings:</span>
+<span id="cb23-4">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">is</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">not</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">and</span> temp <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> threshold:</span>
+<span id="cb23-5">            count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb23-6">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> count</span>
+<span id="cb23-7"></span>
+<span id="cb23-8">data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35.8</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">38.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">24.5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.3</span>]</span>
+<span id="cb23-9"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(count_anomalies(data))         </span>
+<span id="cb23-10"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(count_anomalies(data, threshold<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>))   </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2
+4</code></pre>
+</div>
+</div>
+<p><strong>3. Clean a list of readings</strong></p>
+<div id="1035c499" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> clean_readings(readings):</span>
+<span id="cb25-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Remove None values and return only valid readings</span></span>
+<span id="cb25-3">    cleaned <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> []</span>
+<span id="cb25-4">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> readings:</span>
+<span id="cb25-5">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> temp <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">is</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">not</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>:</span>
+<span id="cb25-6">            cleaned.append(temp)</span>
+<span id="cb25-7">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> cleaned</span>
+<span id="cb25-8"></span>
+<span id="cb25-9">raw <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35.8</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.3</span>]</span>
+<span id="cb25-10">clean <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> clean_readings(raw)</span>
+<span id="cb25-11"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(clean)   </span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[22.1, 35.8, 19.3]</code></pre>
+</div>
+</div>
+<p><strong>4. Full pipeline — clean, analyse, summarise</strong></p>
+<div id="2fd30163" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> clean_readings(readings):</span>
+<span id="cb27-2">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> [t <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> t <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> readings <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> t <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">is</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">not</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>]</span>
+<span id="cb27-3"></span>
+<span id="cb27-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> summarise(readings, threshold<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>):</span>
+<span id="cb27-5">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(readings) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>:</span>
+<span id="cb27-6">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"No valid readings."</span>)</span>
+<span id="cb27-7">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span></span>
+<span id="cb27-8"></span>
+<span id="cb27-9">    average <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(readings) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(readings)</span>
+<span id="cb27-10">    anomalies <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [t <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> t <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> readings <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> t <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> threshold]</span>
+<span id="cb27-11"></span>
+<span id="cb27-12">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Readings:  </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(readings)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb27-13">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Average:   </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>average<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.1f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C"</span>)</span>
+<span id="cb27-14">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Anomalies: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(anomalies)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> readings above </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>threshold<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C"</span>)</span>
+<span id="cb27-15">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> anomalies:</span>
+<span id="cb27-16">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Highest:   </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(anomalies)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">°C"</span>)</span>
+<span id="cb27-17"></span>
+<span id="cb27-18">raw_data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22.1</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35.8</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">38.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19.3</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">24.5</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">41.0</span>]</span>
+<span id="cb27-19"></span>
+<span id="cb27-20">cleaned <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> clean_readings(raw_data)</span>
+<span id="cb27-21">summarise(cleaned)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Readings:  6
+Average:   30.1°C
+Anomalies: 3 readings above 30°C
+Highest:   41.0°C</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Notice</strong> <code>clean_readings</code> uses a different syntax inside the brackets — <code>[t for t in readings if t is not None]</code>. This is called a <strong>list comprehension</strong> — a compact way to build a list with a loop and condition in one line. We won’t go deep on it now, but it’s worth recognising when you see it.</p>
+</blockquote>
+</section>
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Define a function</td>
+<td><code>def my_func():</code></td>
+<td>Always followed by indented block</td>
+</tr>
+<tr class="even">
+<td>Parameter</td>
+<td><code>def f(x):</code></td>
+<td>Placeholder for input</td>
+</tr>
+<tr class="odd">
+<td>Argument</td>
+<td><code>f(10)</code></td>
+<td>Actual value passed in</td>
+</tr>
+<tr class="even">
+<td>Return a value</td>
+<td><code>return x * 2</code></td>
+<td>Sends value back to caller</td>
+</tr>
+<tr class="odd">
+<td>Default parameter</td>
+<td><code>def f(x=5):</code></td>
+<td>Optional when calling</td>
+</tr>
+<tr class="even">
+<td>Multiple returns</td>
+<td><code>return a, b, c</code></td>
+<td>Unpacked as <code>a, b, c = f()</code></td>
+</tr>
+<tr class="odd">
+<td>No return</td>
+<td>function ends without <code>return</code></td>
+<td>Returns <code>None</code> automatically</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+ ]]></description>
+  <category>python-basics</category>
+  <guid>https://your-website-url.example.com/posts/python-functions/</guid>
+  <pubDate>Mon, 05 Oct 2026 22:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Conditions and Loops</title>
   <link>https://your-website-url.example.com/posts/python-condition-loop/</link>
@@ -2232,8 +3361,7 @@ font-style: inherit;">print</span>(result)</span></code></pre></div></div>
   <pubDate>Sat, 19 Sep 2026 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Welcome To Syeda’s Blog</title>
-  <dc:creator>Syeda Fatema Azmi</dc:creator>
+  <title>Welcome To Syeda’s Journey</title>
   <link>https://your-website-url.example.com/posts/welcome/</link>
   <description><![CDATA[ 
 
@@ -2242,7 +3370,7 @@ font-style: inherit;">print</span>(result)</span></code></pre></div></div>
 
 
 <p>This is the first post in my blog. Welcome!</p>
-<p>This blog is a space to share my experiences, thoughts, and learnings in the field of programming, data science, and technology, as I continue my journey. I aim to create a community where we can learn from each other and grow together.</p>
+<p>This blog is a space to share my experiences, thoughts, and learnings in the field of programming, data science, and technology, as I continue my journey. This is more of a diary of my learnings and path, written as notes where I self talk (i.e.&nbsp;give myself instructions), so that I can refer back to them later. However, I do hope that my experiences will be helpful for other people too, especially beginners in this field.</p>
 
 
 

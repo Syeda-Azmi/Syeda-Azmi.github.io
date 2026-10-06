@@ -2,9 +2,9 @@
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
-    "title": "Welcome To Syeda’s Blog",
+    "title": "Welcome To Syeda’s Journey",
     "section": "",
-    "text": "This is the first post in my blog. Welcome!\nThis blog is a space to share my experiences, thoughts, and learnings in the field of programming, data science, and technology, as I continue my journey. I aim to create a community where we can learn from each other and grow together."
+    "text": "This is the first post in my blog. Welcome!\nThis blog is a space to share my experiences, thoughts, and learnings in the field of programming, data science, and technology, as I continue my journey. This is more of a diary of my learnings and path, written as notes where I self talk (i.e. give myself instructions), so that I can refer back to them later. However, I do hope that my experiences will be helpful for other people too, especially beginners in this field."
   },
   {
     "objectID": "posts/python-intro/index.html",
@@ -61,6 +61,118 @@
     "title": "Introduction to Python",
     "section": "Up Next",
     "text": "Up Next\nWe will start with getting everything installed and set up, so you can start simple experiemnts yourself"
+  },
+  {
+    "objectID": "posts/python-functions/index.html",
+    "href": "posts/python-functions/index.html",
+    "title": "Functions",
+    "section": "",
+    "text": "In this post we learn to write our own function. These are logic packaged into reusable and named blocks that lets us keep our code clean, readable and easy to fix (debug). Functions are one of the most important things in programming. And a good news, we have been using in-built functions already. Every time we’ve called print(), len(), or type(), we’ve been using a function."
+  },
+  {
+    "objectID": "posts/python-functions/index.html#what-are-we-doing-today",
+    "href": "posts/python-functions/index.html#what-are-we-doing-today",
+    "title": "Functions",
+    "section": "",
+    "text": "In this post we learn to write our own function. These are logic packaged into reusable and named blocks that lets us keep our code clean, readable and easy to fix (debug). Functions are one of the most important things in programming. And a good news, we have been using in-built functions already. Every time we’ve called print(), len(), or type(), we’ve been using a function."
+  },
+  {
+    "objectID": "posts/python-functions/index.html#what-is-a-function",
+    "href": "posts/python-functions/index.html#what-is-a-function",
+    "title": "Functions",
+    "section": "What is a Function?",
+    "text": "What is a Function?\nA function is a named block of code that does a specific task. You define it once, and call it by name whenever you need it — once, ten times, inside a loop, anywhere.\nWithout functions:\n\n# Calculating a average for three different datasets\ntotal1 = 22.1 + 19.8 + 25.3\naverage1 = total1 / 3\n\ntotal2 = 30.5 + 28.1 + 33.2\naverage2 = total2 / 3\n\ntotal3 = 15.0 + 18.4 + 20.1\naverage3 = total3 / 3\n\nprint (f\"average1: {average1:.2f}, average2: {average2:.2f}, average3: {average3:.2f}\")\n\naverage1: 22.40, average2: 30.60, average3: 17.83\n\n\nWith a function:\n\ndef calculate_average(numbers):\n    total = sum(numbers)\n    return total / len(numbers)\n\naverage1 = calculate_average([22.1, 19.8, 25.3])\naverage2 = calculate_average([30.5, 28.1, 33.2])\naverage3 = calculate_average([15.0, 18.4, 20.1])\n\nprint (f\"average1: {average1:.2f}, average2: {average2:.2f}, average3: {average3:.2f}\")\n\naverage1: 22.40, average2: 30.60, average3: 17.83\n\n\nSame result. Less repetition. And if something needs fixing, you fix it in one place."
+  },
+  {
+    "objectID": "posts/python-functions/index.html#anatomy-of-a-function",
+    "href": "posts/python-functions/index.html#anatomy-of-a-function",
+    "title": "Functions",
+    "section": "Anatomy of a Function",
+    "text": "Anatomy of a Function\n\ndef greet(name):\n    message = f\"Hello, {name}!\"\n    return message\n\n\ndef — keyword that tells Python you’re defining a function\ngreet — the name you’re giving it (same naming rules as variables)\n(name) — the parameter: a placeholder for the value you’ll pass in\nreturn — sends a value back to whoever called the function\n\nCalling it:\n\nresult = greet(\"Syeda\")\nprint(result)       \n\nHello, Syeda!\n\n\nThe value you pass in (\"Syeda\") is called an argument. The placeholder inside the function (name) is the parameter. People use these words interchangeably — now you know both."
+  },
+  {
+    "objectID": "posts/python-functions/index.html#functions-without-parameters",
+    "href": "posts/python-functions/index.html#functions-without-parameters",
+    "title": "Functions",
+    "section": "Functions Without Parameters",
+    "text": "Functions Without Parameters\nNot every function needs input:\n\ndef print_separator():\n    print(\"-\" * 40)\n\nprint_separator()\nprint(\"Some data here\")\nprint_separator()\n\n----------------------------------------\nSome data here\n----------------------------------------\n\n\nUseful for things you repeat often — formatting, headers, dividers."
+  },
+  {
+    "objectID": "posts/python-functions/index.html#functions-without-return",
+    "href": "posts/python-functions/index.html#functions-without-return",
+    "title": "Functions",
+    "section": "Functions Without Return",
+    "text": "Functions Without Return\nNot every function needs to return a value. Some just do something:\n\ndef describe_temperature(temp):\n    if temp &gt; 30:\n        print(f\"{temp}°C — Hot\")\n    elif temp &gt; 20:\n        print(f\"{temp}°C — Warm\")\n    else:\n        print(f\"{temp}°C — Cool\")\n\ndescribe_temperature(35)\ndescribe_temperature(22)\ndescribe_temperature(10)\n\n35°C — Hot\n22°C — Warm\n10°C — Cool\n\n\n\nGood to know: If a function has no return statement, it returns None automatically. This is fine when you’re using a function purely for its side effects — printing, saving a file, updating something."
+  },
+  {
+    "objectID": "posts/python-functions/index.html#multiple-parameters",
+    "href": "posts/python-functions/index.html#multiple-parameters",
+    "title": "Functions",
+    "section": "Multiple Parameters",
+    "text": "Multiple Parameters\nFunctions can take as many parameters as they need:\n\ndef calculate_bmi(weight_kg, height_m):\n    bmi = weight_kg / (height_m ** 2)\n    return bmi\n\nbmi = calculate_bmi(70, 1.75)\nprint(f\"BMI: {bmi:.1f}\")"
+  },
+  {
+    "objectID": "posts/python-functions/index.html#default-parameter-values",
+    "href": "posts/python-functions/index.html#default-parameter-values",
+    "title": "Functions",
+    "section": "Default Parameter Values",
+    "text": "Default Parameter Values\nYou can give parameters a default value, making them optional when calling the function:\n\ndef describe_reading(temp, unit=\"C\"):\n    print(f\"Temperature: {temp}°{unit}\")\n\ndescribe_reading(22.5)          # uses default: °C\ndescribe_reading(72.5, \"F\")     # overrides default: °F\n\nTemperature: 22.5°C\nTemperature: 72.5°F\n\n\nParameters with defaults must always come after parameters without defaults."
+  },
+  {
+    "objectID": "posts/python-functions/index.html#returning-multiple-values",
+    "href": "posts/python-functions/index.html#returning-multiple-values",
+    "title": "Functions",
+    "section": "Returning Multiple Values",
+    "text": "Returning Multiple Values\nA function can return more than one value — Python packs them into a tuple automatically:\n\ndef analyse_readings(readings):\n    average = sum(readings) / len(readings)\n    maximum = max(readings)\n    minimum = min(readings)\n    return average, maximum, minimum\n\navg, high, low = analyse_readings([22.1, 35.8, 19.3, 38.1, 24.5])\n\nprint(f\"Average: {avg:.1f}°C\")\nprint(f\"Highest: {high}°C\")\nprint(f\"Lowest:  {low}°C\")\n\nAverage: 28.0°C\nHighest: 38.1°C\nLowest:  19.3°C\n\n\nThe three variables on the left unpack the three returned values in order. This is called tuple unpacking and you’ll see it constantly."
+  },
+  {
+    "objectID": "posts/python-functions/index.html#functions-calling-other-functions",
+    "href": "posts/python-functions/index.html#functions-calling-other-functions",
+    "title": "Functions",
+    "section": "Functions Calling Other Functions",
+    "text": "Functions Calling Other Functions\nFunctions can call other functions — this is how you build up complexity in layers while keeping each piece simple:\n\ndef is_anomaly(temp, threshold=30):\n    return temp &gt; threshold\n\ndef classify_reading(temp):\n    if temp is None:\n        return \"missing\"\n    elif is_anomaly(temp):\n        return \"anomaly\"\n    else:\n        return \"normal\"\n\nreadings = [22.1, None, 35.8, 19.3, 38.1]\n\nfor temp in readings:\n    status = classify_reading(temp)\n    print(f\"{temp} → {status}\")\n\n22.1 → normal\nNone → missing\n35.8 → anomaly\n19.3 → normal\n38.1 → anomaly\n\n\nclassify_reading delegates part of its job to is_anomaly. Each function stays focused on one thing. This is good practice — functions that do one thing well are easier to understand, test and fix.\n\nWhen functions start calling other functions, it would be good to skip the function definition and start from understanding the ‘main’ part of the code. And slowly trace back to see what the functions are doing."
+  },
+  {
+    "objectID": "posts/python-functions/index.html#scope-where-variables-live",
+    "href": "posts/python-functions/index.html#scope-where-variables-live",
+    "title": "Functions",
+    "section": "Scope — Where Variables Live",
+    "text": "Scope — Where Variables Live\nVariables created inside a function only exist inside that function. They’re not visible outside:\n\ndef calculate_area(radius):\n    pi = 3.14159          # this variable only exists inside this function\n    area = pi * radius ** 2\n    return area\n\nprint(calculate_area(5))\nprint(pi)                 # NameError — pi doesn't exist out here\n\n78.53975\n\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[11], line 7\n      3     area = pi * radius ** 2\n      4     return area\n      5 \n      6 print(calculate_area(5))\n----&gt; 7 print(pi)                 # NameError — pi doesn't exist out here\n\nNameError: name 'pi' is not defined\n\n\n\nThis is called scope. It means functions are self-contained — they don’t accidentally interfere with the rest of your code, and the rest of your code doesn’t interfere with them.\n\nThe rule: Variables defined inside a function are local to that function. Variables defined outside — at the top of your notebook — are global and can be read from anywhere, though modifying them from inside a function is something to be careful with.\n\n\nAnalogy: Imagine these local and global variables like your fave celebrities. Globally known celebrities are known by everyone, everyone can access their information everywhere very easily. But a not so popular new artist from Bangladesh will be known by very niche people in Bangladesh. Information is also not available."
+  },
+  {
+    "objectID": "posts/python-functions/index.html#mini-examples-to-try",
+    "href": "posts/python-functions/index.html#mini-examples-to-try",
+    "title": "Functions",
+    "section": "Mini Examples to Try",
+    "text": "Mini Examples to Try\nThese get progressively more involved. Each one uses concepts from earlier posts.\n1. Celsius to Fahrenheit converter\n\ndef celsius_to_fahrenheit(celsius):\n    return (celsius * 9/5) + 32\n\nprint(celsius_to_fahrenheit(0))   \nprint(celsius_to_fahrenheit(100))\nprint(celsius_to_fahrenheit(22))  \n\n32.0\n212.0\n71.6\n\n\n2. Count anomalies in a list\n\ndef count_anomalies(readings, threshold=30):\n    count = 0\n    for temp in readings:\n        if temp is not None and temp &gt; threshold:\n            count += 1\n    return count\n\ndata = [22.1, 35.8, None, 38.1, 24.5, 19.3]\nprint(count_anomalies(data))         \nprint(count_anomalies(data, threshold=20))   \n\n2\n4\n\n\n3. Clean a list of readings\n\ndef clean_readings(readings):\n    # Remove None values and return only valid readings\n    cleaned = []\n    for temp in readings:\n        if temp is not None:\n            cleaned.append(temp)\n    return cleaned\n\nraw = [22.1, None, 35.8, None, 19.3]\nclean = clean_readings(raw)\nprint(clean)   \n\n[22.1, 35.8, 19.3]\n\n\n4. Full pipeline — clean, analyse, summarise\n\ndef clean_readings(readings):\n    return [t for t in readings if t is not None]\n\ndef summarise(readings, threshold=30):\n    if len(readings) == 0:\n        print(\"No valid readings.\")\n        return\n\n    average = sum(readings) / len(readings)\n    anomalies = [t for t in readings if t &gt; threshold]\n\n    print(f\"Readings:  {len(readings)}\")\n    print(f\"Average:   {average:.1f}°C\")\n    print(f\"Anomalies: {len(anomalies)} readings above {threshold}°C\")\n    if anomalies:\n        print(f\"Highest:   {max(anomalies)}°C\")\n\nraw_data = [22.1, None, 35.8, None, 38.1, 19.3, 24.5, None, 41.0]\n\ncleaned = clean_readings(raw_data)\nsummarise(cleaned)\n\nReadings:  6\nAverage:   30.1°C\nAnomalies: 3 readings above 30°C\nHighest:   41.0°C\n\n\n\nNotice clean_readings uses a different syntax inside the brackets — [t for t in readings if t is not None]. This is called a list comprehension — a compact way to build a list with a loop and condition in one line. We won’t go deep on it now, but it’s worth recognising when you see it."
+  },
+  {
+    "objectID": "posts/python-functions/index.html#quick-reference",
+    "href": "posts/python-functions/index.html#quick-reference",
+    "title": "Functions",
+    "section": "Quick Reference",
+    "text": "Quick Reference\n\n\n\n\n\n\n\n\nConcept\nExample\nNotes\n\n\n\n\nDefine a function\ndef my_func():\nAlways followed by indented block\n\n\nParameter\ndef f(x):\nPlaceholder for input\n\n\nArgument\nf(10)\nActual value passed in\n\n\nReturn a value\nreturn x * 2\nSends value back to caller\n\n\nDefault parameter\ndef f(x=5):\nOptional when calling\n\n\nMultiple returns\nreturn a, b, c\nUnpacked as a, b, c = f()\n\n\nNo return\nfunction ends without return\nReturns None automatically"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Syeda's Journey",
+    "section": "",
+    "text": "Beginner-friendly Data Science diary, from your first print() to machine learning."
+  },
+  {
+    "objectID": "index.html#learn-with-me-through-my-journey",
+    "href": "index.html#learn-with-me-through-my-journey",
+    "title": "Syeda's Journey",
+    "section": "",
+    "text": "Beginner-friendly Data Science diary, from your first print() to machine learning."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Welcome!\nHere, I share my journey of learning Python and the world of machine learning. I will also share practices, tips, and insights on various topics related to programming, data science, and technology as I learn them. My goal here is to keep a diary of my learnings in a way that is accessible and useful for others too."
   },
   {
     "objectID": "posts/python-condition-loop/index.html",
@@ -124,27 +236,6 @@
     "title": "Conditions and Loops",
     "section": "What’s Next",
     "text": "What’s Next\nYou can now make decisions and repeat actions. The next piece is functions — a way to package logic you’ve written into something reusable, so you don’t repeat yourself across your code. That’s what we’re covering next."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Welcome!\nHere, I share my journey of learning Python and the world of machine learning. I will also share practices, tips, and insights on various topics related to programming, data science, and technology as I learn them. My goal here is to keep a diary of my learnings in a way that is accessible and useful for others too."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Syeda's Journey",
-    "section": "",
-    "text": "Beginner-friendly Data Science diary, from your first print() to machine learning."
-  },
-  {
-    "objectID": "index.html#learn-with-me-through-my-journey",
-    "href": "index.html#learn-with-me-through-my-journey",
-    "title": "Syeda's Journey",
-    "section": "",
-    "text": "Beginner-friendly Data Science diary, from your first print() to machine learning."
   },
   {
     "objectID": "posts/python-fundamental/index.html",
