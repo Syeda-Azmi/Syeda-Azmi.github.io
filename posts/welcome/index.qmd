@@ -7,5 +7,4 @@ categories: [welcome]
 
 This is the first post in my blog. Welcome!
 
-This blog is a space to share my experiences, thoughts, and learnings in the field of programming, data science, and technology, as I continue my journey. I aim to create a community where we can learn from each other and grow together.
-
+This blog is a space to share my experiences, thoughts, and learnings in the field of programming, data science, and technology, as I continue my journey. This is more of a diary of my learnings and path, written as notes where I self talk (i.e. give myself instructions), so that I can refer back to them later. However, I do hope that my experiences will be helpful for other people too, especially beginners in this field. 
